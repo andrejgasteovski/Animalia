@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animal of the day" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Animal of the day" >
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More..." />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Learn about animals"
+            android:id="@+id/btnLearn"
+            />
+         <ImageButton 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Take a quiz"
+            android:id="@+id/btnQuiz"
+            />
+          <ImageButton 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Settings"
+            android:id="@+id/btnSettings"
+            />
+    </LinearLayout>
+      <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="See high scores"
+            android:id="@+id/btnHighScores"
+            />
+         <ImageButton 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="See your achievements"
+            android:id="@+id/btnAchievements"
+            />
+        
+    </LinearLayout>
+
+</LinearLayout>
