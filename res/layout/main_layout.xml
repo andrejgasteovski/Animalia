@@ -7,8 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-         >
+        android:orientation="vertical" >
 
         <TextView
             android:layout_width="match_parent"
@@ -27,46 +26,54 @@
             android:layout_height="wrap_content"
             android:text="More..." />
     </LinearLayout>
-    <LinearLayout 
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageButton 
-             android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/btnLearn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="Learn about animals"
-            android:id="@+id/btnLearn"
-            />
-         <ImageButton 
-             android:layout_width="wrap_content"
+            android:src="@drawable/learn" />
+
+        <ImageButton
+            android:id="@+id/btnQuiz"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="Take a quiz"
-            android:id="@+id/btnQuiz"
-            />
-          <ImageButton 
-             android:layout_width="wrap_content"
+            android:src="@drawable/quiz" />
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="Settings"
-            android:id="@+id/btnSettings"
-            />
+            android:src="@drawable/settings" />
     </LinearLayout>
-      <LinearLayout 
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageButton 
-             android:layout_width="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/btnHighScores"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="See high scores"
-            android:id="@+id/btnHighScores"
-            />
-         <ImageButton 
-             android:layout_width="wrap_content"
+            android:src="@drawable/high_scores" />
+
+        <ImageButton
+            android:id="@+id/btnAchievements"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="See your achievements"
-            android:id="@+id/btnAchievements"
-            />
-        
+            android:src="@drawable/achievements" />
     </LinearLayout>
 
 </LinearLayout>
