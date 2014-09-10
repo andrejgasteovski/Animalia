@@ -1,9 +1,13 @@
 package com.example.animalia;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
+
+import com.facebook.*;
+import com.facebook.model.*;
+
+import android.widget.TextView;
+import android.content.Intent;
+
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -12,9 +16,6 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -91,6 +92,30 @@ public class MainActivity extends Activity {
 		//Intent intent=new Intent(this, ListAnimals.class);
 		Intent intent=new Intent(this, ListModules.class);
 		startActivity(intent);
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	  super.onActivityResult(requestCode, resultCode, data);
+	  Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+	}
+	
+	public void loginFacebook(View view){
+		Session.openActiveSession(this, true, new Session.StatusCallback() {
+			@Override
+			public void call(Session session, SessionState state, Exception exception) {
+				if(session.isOpened()){
+					Request.newMeRequest(session, new Request.GraphUserCallback() {	
+						@Override
+						public void onCompleted(GraphUser user, Response response) {
+							TextView tv = (TextView) findViewById(R.id.welcome);
+							tv.setText("Hello " + user.getName() +  "!");
+						
+						}
+					}).executeAsync();
+				}
+			}
+		});
 	}
 
 }
