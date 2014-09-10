@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -7,12 +7,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/aotd_layout" 
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Animal of the day" />
+            android:text="Animal of the day" 
+            android:textSize="20sp"/>
 
         <ImageView
             android:id="@+id/image"
@@ -30,50 +35,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center" >
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp" >
 
-        <ImageButton
-            android:id="@+id/btnLearn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="Learn about animals"
-            android:src="@drawable/learn" />
+            android:gravity="center"
+            android:orientation="horizontal" >
 
-        <ImageButton
-            android:id="@+id/btnQuiz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="Take a quiz"
-            android:src="@drawable/quiz" />
+            <ImageButton
+                android:id="@+id/btnLearn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Learn about animals"
+                android:src="@drawable/learn" />
 
-        <ImageButton
-            android:id="@+id/btnSettings"
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/btnQuiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Take a quiz"
+                android:src="@drawable/quiz" />
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Settings"
+                android:src="@drawable/settings" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="Settings"
-            android:src="@drawable/settings" />
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/btnHighScores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="See high scores"
+                android:src="@drawable/high_scores" />
+
+            <ImageButton
+                android:id="@+id/btnAchievements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="See your achievements"
+                android:src="@drawable/achievements" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:gravity="center">
-
-        <ImageButton
-            android:id="@+id/btnHighScores"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="See high scores"
-            android:src="@drawable/high_scores" />
-
-        <ImageButton
-            android:id="@+id/btnAchievements"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="See your achievements"
-            android:src="@drawable/achievements" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

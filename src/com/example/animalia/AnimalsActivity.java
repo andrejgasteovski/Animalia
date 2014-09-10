@@ -25,7 +25,6 @@ public class AnimalsActivity extends ListActivity {
     private static String url = "http://hcibiology.herokuapp.com/animals";
  
     // JSON Node names
-    private static final String TAG_CONTACTS = "contacts";
     private static final String TAG_ID = "id";
     private static final String TAG_NAME = "name";
     private static final String TAG_LINK = "link";
