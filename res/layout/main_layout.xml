@@ -50,7 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="Learn about animals"
-                android:src="@drawable/learn" />
+                android:src="@drawable/learn" 
+                android:onClick="onClickLearn"/>
 
             <ImageButton
                 android:id="@+id/btnQuiz"

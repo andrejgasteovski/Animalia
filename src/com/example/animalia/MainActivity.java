@@ -11,11 +11,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity {
@@ -85,6 +87,10 @@ public class MainActivity extends Activity {
 
 	}
 
-	
+	public void onClickLearn(View view) {
+		//Intent intent=new Intent(this, ListAnimals.class);
+		Intent intent=new Intent(this, ListModules.class);
+		startActivity(intent);
+	}
 
 }

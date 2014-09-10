@@ -16,7 +16,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".AnimalsActivity"
+            android:name=".ListAnimals"
+            android:label="@string/app_name" >
+            
+        </activity>
+        <activity
+            android:name=".ListModules"
             android:label="@string/app_name" >
             
         </activity>
