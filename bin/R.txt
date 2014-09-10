@@ -332,7 +332,7 @@ int id action_context_bar 0x7f05001f
 int id action_menu_divider 0x7f050018
 int id action_menu_presenter 0x7f050019
 int id action_mode_close_button 0x7f050026
-int id action_settings 0x7f050062
+int id action_settings 0x7f050065
 int id activity_chooser_view_content 0x7f050027
 int id always 0x7f05000d
 int id beginning 0x7f050013
@@ -388,10 +388,12 @@ int id link 0x7f050059
 int id listMode 0x7f050003
 int id list_item 0x7f05002b
 int id middle 0x7f050014
+int id module 0x7f050063
 int id name 0x7f050058
 int id never 0x7f05000b
 int id none 0x7f050012
 int id normal 0x7f050001
+int id number 0x7f050062
 int id picker_subtitle 0x7f05004d
 int id progress_circular 0x7f05001a
 int id progress_horizontal 0x7f05001b
@@ -414,6 +416,7 @@ int id small 0x7f050000
 int id split_action_bar 0x7f050020
 int id submit_area 0x7f05003b
 int id tabMode 0x7f050004
+int id text 0x7f050064
 int id title 0x7f05002d
 int id top_action_bar 0x7f050022
 int id up 0x7f050023
@@ -464,7 +467,8 @@ int layout com_facebook_usersettingsfragment 0x7f030027
 int layout list_item 0x7f030028
 int layout main_layout 0x7f030029
 int layout modules_layout 0x7f03002a
-int layout support_simple_spinner_dropdown_item 0x7f03002b
+int layout modules_list_item 0x7f03002b
+int layout support_simple_spinner_dropdown_item 0x7f03002c
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f08001b
 int string abc_action_bar_up_description 0x7f08001c

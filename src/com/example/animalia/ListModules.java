@@ -68,7 +68,7 @@ public class ListModules extends ListActivity {
 
 					// tmp hashmap for single animal
 					HashMap<String, String> animal = new HashMap<String, String>();
-
+					text=text.substring(0,60)+"...";
 					// adding each child node to HashMap key => value
 					animal.put(TAG_NUMBER, number);
 					animal.put(TAG_MODULE, module);
@@ -87,9 +87,10 @@ public class ListModules extends ListActivity {
 		}
 
 		ListAdapter adapter = new SimpleAdapter(ListModules.this,
-				modulesList, R.layout.list_item, new String[] { TAG_NUMBER,
-						TAG_MODULE, TAG_TEXT }, new int[] { R.id.name, R.id.link,
-						R.id.id });
+				modulesList, R.layout.modules_list_item, new String[] { TAG_NUMBER,
+						TAG_MODULE, TAG_TEXT }, new int[] { R.id.number, R.id.module,
+						R.id.text });
+		//treba da se dodade za R.id.icon da ja pretstavi slikata za sekoj modul
 
 		setListAdapter(adapter);
 	}
