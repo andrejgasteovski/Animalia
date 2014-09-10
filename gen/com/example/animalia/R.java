@@ -1256,7 +1256,7 @@ containing a value of this type.
         public static final int com_facebook_list_section_header_background=0x7f020066;
         public static final int com_facebook_loginbutton_silver=0x7f020067;
         public static final int com_facebook_logo=0x7f020068;
-        public static final int com_facebook_picker_default_separator_color=0x7f020086;
+        public static final int com_facebook_picker_default_separator_color=0x7f020088;
         public static final int com_facebook_picker_item_background=0x7f020069;
         public static final int com_facebook_picker_list_focused=0x7f02006a;
         public static final int com_facebook_picker_list_longpressed=0x7f02006b;
@@ -1284,8 +1284,10 @@ containing a value of this type.
         public static final int high_scores=0x7f020081;
         public static final int ic_launcher=0x7f020082;
         public static final int learn=0x7f020083;
-        public static final int quiz=0x7f020084;
-        public static final int settings=0x7f020085;
+        public static final int module_layout=0x7f020084;
+        public static final int module_layout_item=0x7f020085;
+        public static final int quiz=0x7f020086;
+        public static final int settings=0x7f020087;
     }
     public static final class id {
         public static final int action_bar=0x7f05001e;
@@ -1299,7 +1301,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050018;
         public static final int action_menu_presenter=0x7f050019;
         public static final int action_mode_close_button=0x7f050026;
-        public static final int action_settings=0x7f050065;
+        public static final int action_settings=0x7f05006e;
         public static final int activity_chooser_view_content=0x7f050027;
         public static final int always=0x7f05000d;
         public static final int beginning=0x7f050013;
@@ -1350,17 +1352,26 @@ containing a value of this type.
         public static final int id=0x7f05005a;
         public static final int ifRoom=0x7f05000c;
         public static final int image=0x7f050029;
+        public static final int img0=0x7f050062;
+        public static final int img1=0x7f050064;
+        public static final int img2=0x7f050066;
+        public static final int img3=0x7f050068;
+        public static final int img4=0x7f05006a;
         public static final int large=0x7f050002;
         public static final int link=0x7f050059;
         public static final int listMode=0x7f050003;
         public static final int list_item=0x7f05002b;
         public static final int middle=0x7f050014;
-        public static final int module=0x7f050063;
+        public static final int module=0x7f05006c;
+        public static final int module0=0x7f050063;
+        public static final int module1=0x7f050065;
+        public static final int module2=0x7f050067;
+        public static final int module3=0x7f050069;
+        public static final int module4=0x7f05006b;
         public static final int name=0x7f050058;
         public static final int never=0x7f05000b;
         public static final int none=0x7f050012;
         public static final int normal=0x7f050001;
-        public static final int number=0x7f050062;
         public static final int picker_subtitle=0x7f05004d;
         public static final int progress_circular=0x7f05001a;
         public static final int progress_horizontal=0x7f05001b;
@@ -1383,7 +1394,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f050020;
         public static final int submit_area=0x7f05003b;
         public static final int tabMode=0x7f050004;
-        public static final int text=0x7f050064;
+        public static final int text=0x7f05006d;
         public static final int title=0x7f05002d;
         public static final int top_action_bar=0x7f050022;
         public static final int up=0x7f050023;
