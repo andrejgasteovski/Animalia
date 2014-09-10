@@ -1,13 +1,6 @@
 package com.example.animalia;
 
 import java.io.IOException;
-
-import com.facebook.*;
-import com.facebook.model.*;
-
-import android.widget.TextView;
-import android.content.Intent;
-
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -20,6 +13,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.facebook.Request;
+import com.facebook.Response;
+import com.facebook.Session;
+import com.facebook.SessionState;
+import com.facebook.model.GraphUser;
 
 public class MainActivity extends Activity {
 
