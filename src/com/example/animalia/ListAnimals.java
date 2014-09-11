@@ -22,7 +22,7 @@ public class ListAnimals extends ListActivity {
 
 	private ProgressDialog pDialog;
 
-	// URL to get contacts JSON
+	// URL to get animals JSON
 	private static String url = "http://hcibiology.herokuapp.com/animals";
 
 	// JSON Node names
@@ -30,7 +30,7 @@ public class ListAnimals extends ListActivity {
 	private static final String TAG_NAME = "name";
 	private static final String TAG_LINK = "link";
 
-	// contacts JSONArray
+	// animals JSONArray
 	JSONArray animals = null;
 
 	// Hashmap for ListView
@@ -57,7 +57,6 @@ public class ListAnimals extends ListActivity {
 		} catch (ExecutionException e) {
 			Log.d("animalia", e.getMessage());
 		}
-
 		if (jsonStr != null) {
 			try {
 
@@ -78,7 +77,6 @@ public class ListAnimals extends ListActivity {
 					animal.put(TAG_ID, id);
 					animal.put(TAG_NAME, name);
 					animal.put(TAG_LINK, link);
-					// animal.put(TAG_PHONE_MOBILE, mobile);
 
 					// adding animal to animal list
 					animalsList.add(animal);
@@ -91,9 +89,7 @@ public class ListAnimals extends ListActivity {
 		}
 
 		ListAdapter adapter = new SimpleAdapter(ListAnimals.this,
-				animalsList, R.layout.list_item, new String[] { TAG_NAME,
-						TAG_LINK, TAG_ID }, new int[] { R.id.name, R.id.link,
-						R.id.id });
+				animalsList, R.layout.list_item, new String[] { TAG_NAME }, new int[] { R.id.name});
 
 		setListAdapter(adapter);
 	}

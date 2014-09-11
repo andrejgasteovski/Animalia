@@ -66,7 +66,7 @@ public class ListModules extends Activity {
 					String module = a.getString(TAG_MODULE);
 					String text = a.getString(TAG_TEXT);
 					String link = a.getString(TAG_LINK);
-					String icon=a.getString(TAG_ICON);
+					String icon = a.getString(TAG_ICON);
 
 					// tmp hashmap for single animal
 					HashMap<String, String> animal = new HashMap<String, String>();
@@ -76,10 +76,7 @@ public class ListModules extends Activity {
 					animal.put(TAG_MODULE, module);
 					animal.put(TAG_TEXT, text);
 					animal.put(TAG_LINK, link);
-					animal.put(
-							TAG_ICON,icon
-							);
-				
+					animal.put(TAG_ICON, icon);
 
 					// adding animal to animal list
 					modulesList.add(animal);
@@ -138,28 +135,28 @@ public class ListModules extends Activity {
 		Intent i;
 		switch (view.getId()) {
 		case R.id.img0:
-			i=new Intent(this,ModuleAnimals.class);
-			i.putExtra("url", basicURL+modulesList.get(0).get(TAG_LINK));
+			i = new Intent(this, ModuleAnimals.class);
+			i.putExtra("url", basicURL + modulesList.get(0).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img1:
-			i=new Intent(this,ModuleAnimals.class);
-			i.putExtra("url", basicURL+ modulesList.get(1).get(TAG_LINK));
+			i = new Intent(this, ModuleAnimals.class);
+			i.putExtra("url", basicURL + modulesList.get(1).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img2:
-			i=new Intent(this,ModuleAnimals.class);
-			i.putExtra("url", basicURL+ modulesList.get(2).get(TAG_LINK));
+			i = new Intent(this, ModuleAnimals.class);
+			i.putExtra("url", basicURL + modulesList.get(2).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img3:
-			i=new Intent(this,ModuleAnimals.class);
-			i.putExtra("url", basicURL+ modulesList.get(3).get(TAG_LINK));
+			i = new Intent(this, ModuleAnimals.class);
+			i.putExtra("url", basicURL + modulesList.get(3).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img4:
-			i=new Intent(this,ModuleAnimals.class);
-			i.putExtra("url", basicURL+ modulesList.get(4).get(TAG_LINK));
+			i = new Intent(this, ModuleAnimals.class);
+			i.putExtra("url", basicURL + modulesList.get(4).get(TAG_LINK));
 			startActivity(i);
 			break;
 		}
