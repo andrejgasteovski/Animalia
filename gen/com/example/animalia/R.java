@@ -1474,9 +1474,10 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment=0x7f030027;
         public static final int list_item=0x7f030028;
         public static final int main_layout=0x7f030029;
-        public static final int modules_layout=0x7f03002a;
-        public static final int modules_list_item=0x7f03002b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002c;
+        public static final int module_animals_layout=0x7f03002a;
+        public static final int modules_layout=0x7f03002b;
+        public static final int modules_list_item=0x7f03002c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03002d;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

@@ -481,9 +481,10 @@ int layout com_facebook_tooltip_bubble 0x7f030026
 int layout com_facebook_usersettingsfragment 0x7f030027
 int layout list_item 0x7f030028
 int layout main_layout 0x7f030029
-int layout modules_layout 0x7f03002a
-int layout modules_list_item 0x7f03002b
-int layout support_simple_spinner_dropdown_item 0x7f03002c
+int layout module_animals_layout 0x7f03002a
+int layout modules_layout 0x7f03002b
+int layout modules_list_item 0x7f03002c
+int layout support_simple_spinner_dropdown_item 0x7f03002d
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f08001b
 int string abc_action_bar_up_description 0x7f08001c
