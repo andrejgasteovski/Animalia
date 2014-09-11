@@ -1,4 +1,5 @@
-package com.example.animalia;
+package com.example.animalia.learn;
+import com.example.animalia.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +8,12 @@ import java.util.concurrent.ExecutionException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.example.animalia.ImageLoadTask;
+import com.example.animalia.R;
+import com.example.animalia.R.id;
+import com.example.animalia.R.layout;
+import com.example.animalia.http_request.GetResponse;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -135,27 +142,27 @@ public class ListModules extends Activity {
 		Intent i;
 		switch (view.getId()) {
 		case R.id.img0:
-			i = new Intent(this, ModuleAnimals.class);
+			i = new Intent(this, ModuleDetails.class);
 			i.putExtra("url", basicURL + modulesList.get(0).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img1:
-			i = new Intent(this, ModuleAnimals.class);
+			i = new Intent(this, ModuleDetails.class);
 			i.putExtra("url", basicURL + modulesList.get(1).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img2:
-			i = new Intent(this, ModuleAnimals.class);
+			i = new Intent(this, ModuleDetails.class);
 			i.putExtra("url", basicURL + modulesList.get(2).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img3:
-			i = new Intent(this, ModuleAnimals.class);
+			i = new Intent(this, ModuleDetails.class);
 			i.putExtra("url", basicURL + modulesList.get(3).get(TAG_LINK));
 			startActivity(i);
 			break;
 		case R.id.img4:
-			i = new Intent(this, ModuleAnimals.class);
+			i = new Intent(this, ModuleDetails.class);
 			i.putExtra("url", basicURL + modulesList.get(4).get(TAG_LINK));
 			startActivity(i);
 			break;

@@ -1,4 +1,5 @@
-package com.example.animalia;
+package com.example.animalia.learn;
+import com.example.animalia.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,20 +9,28 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.animalia.ImageLoadTask;
+import com.example.animalia.R;
+import com.example.animalia.R.id;
+import com.example.animalia.R.layout;
+import com.example.animalia.http_request.GetResponse;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
-public class ModuleAnimals extends ListActivity {
+import android.widget.AdapterView;
+public class ModuleDetails extends ListActivity {
 	// URL to get contacts JSON
-	private static String url;;
-
+	private static String url;
+	private static String basicURL = "http://hcibiology.herokuapp.com";
 	// JSON Node names
 	private static final String TAG_NUMBER = "number";
 	private static final String TAG_MODULE = "module";
@@ -43,23 +52,35 @@ public class ModuleAnimals extends ListActivity {
 	JSONObject spotlight = null;
 
 	// Hashmap for ListView
-	ArrayList<HashMap<String, String>> animalsList;
+	ArrayList<AnimalShort> animalsList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.module_animals_layout);
 
-		animalsList = new ArrayList<HashMap<String, String>>();
+		animalsList = new ArrayList<AnimalShort>();
 
 		Intent intent = getIntent();
 		url = intent.getStringExtra("url");
 
-		TextView tvName = (TextView) findViewById(R.id.spot_name);
-		tvName.setText("Probaa");
 		parseJson();
+		initializeList();
 	}
+	private void initializeList(){
+		getListView().setClickable(true);
+		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				AnimalShort animal=(AnimalShort)getListView().getItemAtPosition(position);
+				Intent i=new Intent(ModuleDetails.this, AnimalDetails.class);
+				i.putExtra("url", animal.getLink());
+				startActivity(i);
+			}
+		});
+	}
 	private void parseJson() {
 		String jsonStr = null;
 		try {
@@ -86,11 +107,9 @@ public class ModuleAnimals extends ListActivity {
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
-
-		ListAdapter adapter = new SimpleAdapter(ModuleAnimals.this,
-				animalsList, R.layout.list_item, new String[] { TAG_NAME },
-				new int[] { R.id.name });
-
+		int layout=android.R.layout.simple_list_item_1;
+		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(ModuleDetails.this,layout,animalsList);
+		adapter.notifyDataSetChanged();
 		setListAdapter(adapter);
 	}
 
@@ -135,17 +154,10 @@ public class ModuleAnimals extends ListActivity {
 			JSONObject a = animals.getJSONObject(i);
 		
 			String id = a.getString(TAG_ID);
-			Log.d("caci", id+" vo setAnimals");
 			String name = a.getString(TAG_NAME);
 			String link = a.getString(TAG_LINK);
 
-			// tmp hashmap for single animal
-			HashMap<String, String> animal = new HashMap<String, String>();
-
-			// adding each child node to HashMap key => value
-			animal.put(TAG_ID, id);
-			animal.put(TAG_NAME, name);
-			animal.put(TAG_LINK, link);
+			AnimalShort animal=new AnimalShort(id, name, link);
 
 			// adding animal to animal list
 			animalsList.add(animal);

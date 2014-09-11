@@ -1,4 +1,4 @@
-package com.example.animalia;
+package com.example.animalia.http_request;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

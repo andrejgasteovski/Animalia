@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.example.animalia.database.Account;
 import com.example.animalia.database.AccountDataSource;
+import com.example.animalia.http_request.GetResponse;
 
 public class StartActivity extends Activity{
 	

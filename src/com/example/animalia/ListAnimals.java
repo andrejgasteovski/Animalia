@@ -8,6 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.animalia.http_request.GetResponse;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;

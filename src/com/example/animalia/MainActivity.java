@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.animalia.database.AccountDataSource;
+import com.example.animalia.http_request.GetResponse;
+import com.example.animalia.learn.ListModules;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;

@@ -21,7 +21,7 @@
             
         </activity>
         <activity
-            android:name=".ListModules"
+            android:name="com.example.animalia.learn.ListModules"
             android:label="@string/app_name" >
             
         </activity>
@@ -46,7 +46,12 @@
 		    android:label="Facebook login" >
 		</activity>
           <activity
-            android:name=".ModuleAnimals"
+            android:name="com.example.animalia.learn.ModuleDetails"
+            android:label="@string/app_name" >
+            
+        </activity>
+          <activity
+            android:name="com.example.animalia.learn.AnimalDetails"
             android:label="@string/app_name" >
             
         </activity>
