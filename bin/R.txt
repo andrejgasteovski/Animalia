@@ -291,7 +291,7 @@ int drawable com_facebook_list_divider 0x7f020065
 int drawable com_facebook_list_section_header_background 0x7f020066
 int drawable com_facebook_loginbutton_silver 0x7f020067
 int drawable com_facebook_logo 0x7f020068
-int drawable com_facebook_picker_default_separator_color 0x7f020088
+int drawable com_facebook_picker_default_separator_color 0x7f02008c
 int drawable com_facebook_picker_item_background 0x7f020069
 int drawable com_facebook_picker_list_focused 0x7f02006a
 int drawable com_facebook_picker_list_longpressed 0x7f02006b
@@ -320,9 +320,13 @@ int drawable high_scores 0x7f020081
 int drawable ic_launcher 0x7f020082
 int drawable learn 0x7f020083
 int drawable module_layout 0x7f020084
-int drawable module_layout_item 0x7f020085
-int drawable quiz 0x7f020086
-int drawable settings 0x7f020087
+int drawable module_layout2 0x7f020085
+int drawable module_layout3 0x7f020086
+int drawable module_layout4 0x7f020087
+int drawable module_layout5 0x7f020088
+int drawable module_layout_item 0x7f020089
+int drawable quiz 0x7f02008a
+int drawable settings 0x7f02008b
 int id action_bar 0x7f05001e
 int id action_bar_activity_content 0x7f050017
 int id action_bar_container 0x7f05001d

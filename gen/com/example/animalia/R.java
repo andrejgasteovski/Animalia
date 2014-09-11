@@ -1256,7 +1256,7 @@ containing a value of this type.
         public static final int com_facebook_list_section_header_background=0x7f020066;
         public static final int com_facebook_loginbutton_silver=0x7f020067;
         public static final int com_facebook_logo=0x7f020068;
-        public static final int com_facebook_picker_default_separator_color=0x7f020088;
+        public static final int com_facebook_picker_default_separator_color=0x7f02008c;
         public static final int com_facebook_picker_item_background=0x7f020069;
         public static final int com_facebook_picker_list_focused=0x7f02006a;
         public static final int com_facebook_picker_list_longpressed=0x7f02006b;
@@ -1285,9 +1285,13 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020082;
         public static final int learn=0x7f020083;
         public static final int module_layout=0x7f020084;
-        public static final int module_layout_item=0x7f020085;
-        public static final int quiz=0x7f020086;
-        public static final int settings=0x7f020087;
+        public static final int module_layout2=0x7f020085;
+        public static final int module_layout3=0x7f020086;
+        public static final int module_layout4=0x7f020087;
+        public static final int module_layout5=0x7f020088;
+        public static final int module_layout_item=0x7f020089;
+        public static final int quiz=0x7f02008a;
+        public static final int settings=0x7f02008b;
     }
     public static final class id {
         public static final int action_bar=0x7f05001e;

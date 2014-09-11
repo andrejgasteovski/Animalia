@@ -1,177 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#062833" >
+    android:layout_height="match_parent" 
+    android:background="#062833"
+    android:columnCount="2"
+    android:rowCount="3">
+
+    <!-- 1  Module -->
 
     <LinearLayout
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/module_layout_item"
+        android:orientation="vertical"
+        android:layout_margin="5dp" >
+
+        <ImageView
+            android:id="@+id/img0"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="Arthropods"
+            android:onClick="" >
+        </ImageView>
+        <!-- Module Label -->
+
+        <TextView
+            android:id="@+id/module0"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:background="@drawable/module_layout"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+ <!-- 2  Module -->
+
+    <LinearLayout
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/module_layout_item"
+        android:orientation="vertical"
+        android:layout_margin="5dp" >
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="Amphibians"
+            android:onClick="" >
+        </ImageView>
+        <!-- Module Label -->
+
+        <TextView
+            android:id="@+id/module1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:background="@drawable/module_layout2"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+ <!-- 3  Module -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/module_layout_item"
+        android:orientation="vertical" 
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="Reptiles" >
+        </ImageView>
+        <!-- Module Label -->
+
+        <TextView
+            android:id="@+id/module2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:background="@drawable/module_layout3"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+ <!-- 4  Module -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/module_layout_item"
+        android:orientation="vertical"
+        android:layout_margin="5dp" >
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="Birds" >
+        </ImageView>
+        <!-- Module Label -->
+
+        <TextView
+            android:id="@+id/module3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:background="@drawable/module_layout4"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+ <!-- 5  Module -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/module_layout_item"
+        android:orientation="vertical"
+        android:layout_columnSpan="2"
         android:layout_gravity="center"
-        android:background="#062833"
-        android:gravity="center"
-        android:orientation="vertical" >
+        android:layout_margin="5dp" >
 
-        <!-- 1  Module -->
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="Mammals" >
+        </ImageView>
+        <!-- Module Label -->
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/module4"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/module_layout_item"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img0"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="Arthropods" >
-            </ImageView>
-            <!-- Module Label -->
-
-            <TextView
-                android:id="@+id/module0"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="3dip"
-                android:background="@drawable/module_layout"
-                android:gravity="center"
-                android:paddingBottom="2dip"
-                android:paddingTop="6dip"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 2  Module -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/module_layout_item"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img1"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="Amphibians" >
-            </ImageView>
-            <!-- Module Label -->
-
-            <TextView
-                android:id="@+id/module1"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:paddingBottom="2dip"
-                android:paddingTop="6dip"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="3dip"
-                android:background="@drawable/module_layout2" />
-        </LinearLayout>
-        <!-- 3  Module -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/module_layout_item"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img2"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="Reptiles" >
-            </ImageView>
-            <!-- Module Label -->
-
-            <TextView
-                android:id="@+id/module2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:paddingBottom="2dip"
-                android:paddingTop="6dip"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="3dip"
-                android:background="@drawable/module_layout3" />
-        </LinearLayout>
-        <!-- 4  Module -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/module_layout_item"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img3"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="Birds" >
-            </ImageView>
-            <!-- Module Label -->
-
-            <TextView
-                android:id="@+id/module3"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:paddingBottom="2dip"
-                android:paddingTop="6dip"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="3dip"
-                android:background="@drawable/module_layout4" />
-        </LinearLayout>
-        <!-- 5  Module -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/module_layout_item"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/img4"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:contentDescription="Mammals" >
-            </ImageView>
-            <!-- Module Label -->
-
-            <TextView
-                android:id="@+id/module4"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:paddingBottom="2dip"
-                android:paddingTop="6dip"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" 
-                android:layout_marginBottom="3dip"
-                android:background="@drawable/module_layout5"/>
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:background="@drawable/module_layout5"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
-</ScrollView>
+</GridLayout>
