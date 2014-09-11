@@ -54,7 +54,7 @@
             android:text="Login using Facebook" />
 
         <TextView
-            android:id="@+id/welcome"
+            android:id="@+id/textViewLoginStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome!" >

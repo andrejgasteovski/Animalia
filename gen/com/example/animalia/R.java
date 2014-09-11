@@ -1305,7 +1305,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050018;
         public static final int action_menu_presenter=0x7f050019;
         public static final int action_mode_close_button=0x7f050026;
-        public static final int action_settings=0x7f05006e;
+        public static final int action_settings=0x7f05006f;
         public static final int activity_chooser_view_content=0x7f050027;
         public static final int always=0x7f05000d;
         public static final int beginning=0x7f050013;
@@ -1315,6 +1315,7 @@ containing a value of this type.
         public static final int btnQuiz=0x7f05005e;
         public static final int btnSettings=0x7f05005f;
         public static final int buttonLogin=0x7f05005b;
+        public static final int buttonStart=0x7f05006e;
         public static final int checkbox=0x7f05002f;
         public static final int collapseActionView=0x7f05000f;
         public static final int com_facebook_body_frame=0x7f050050;
@@ -1399,11 +1400,11 @@ containing a value of this type.
         public static final int submit_area=0x7f05003b;
         public static final int tabMode=0x7f050004;
         public static final int text=0x7f05006d;
+        public static final int textViewLoginStatus=0x7f05005c;
         public static final int title=0x7f05002d;
         public static final int top_action_bar=0x7f050022;
         public static final int up=0x7f050023;
         public static final int useLogo=0x7f050005;
-        public static final int welcome=0x7f05005c;
         public static final int withText=0x7f05000e;
     }
     public static final class integer {
@@ -1477,7 +1478,8 @@ containing a value of this type.
         public static final int module_animals_layout=0x7f03002a;
         public static final int modules_layout=0x7f03002b;
         public static final int modules_list_item=0x7f03002c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002d;
+        public static final int start_activity=0x7f03002d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03002e;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

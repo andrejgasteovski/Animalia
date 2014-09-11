@@ -8,13 +8,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.animalia.database.AccountDataSource;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
@@ -34,19 +38,59 @@ public class MainActivity extends Activity {
 
 	private JSONObject animalOfTheDay;
 
+	//user data
+	private String username;
+	private String name;
+	private int points;
+	
+	Button btnLogin;
+	TextView tvLoginStatus;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
+		
 		try {
 			parseJson();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		initializeAllShit();
+		checkLoginStatus();
+	}
+	
+	private void initializeAllShit(){
+		Log.d("animalia", "Initialize all shit is called");
+		
+		Intent intent = getIntent();
+		username = intent.getStringExtra(StartActivity.USERNAME);
+		name = intent.getStringExtra(StartActivity.NAME);
+		points = intent.getIntExtra(StartActivity.POINTS, 0);
+		
+		btnLogin = (Button) findViewById(R.id.buttonLogin);
+		tvLoginStatus = (TextView) findViewById(R.id.textViewLoginStatus);
+		
+		Log.d("animalia", "All the shit is initialized.. Values --- Username: " + username + " -- Name: + " + name + " -- Points: " + points);
 	}
 
+	private void checkLoginStatus(){
+		Log.d("animalia", "checkLoginStatus is called");
+		
+		if(name.equals("")){
+			Log.d("animalia", "Name is empty -> user is not logged");
+			btnLogin.setEnabled(true);
+			tvLoginStatus.setText("User not logged");
+		}else {
+			Log.d("animalia", "Name is not empty -> user is logged");
+			btnLogin.setEnabled(false);
+			tvLoginStatus.setText("Logged as " + name);
+		}
+	}
+	
 	private void parseJson() throws IOException {
 		String jsonStr = null;
 		try {
@@ -108,14 +152,31 @@ public class MainActivity extends Activity {
 					Request.newMeRequest(session, new Request.GraphUserCallback() {	
 						@Override
 						public void onCompleted(GraphUser user, Response response) {
-							TextView tv = (TextView) findViewById(R.id.welcome);
-							tv.setText("Hello " + user.getName() +  "!");
-						
+							//tvLoginStatus.setText("Hello " + user.getName() +  "!");
+							name = user.getName();
+							AccountDataSource dao = new AccountDataSource(getApplicationContext());
+							dao.open();
+							Log.d("animalia", "DAO is open");
+							dao.updateName(name);
+							Log.d("animalia", "Account name is updated");
+							checkLoginStatus();
+							Log.d("animalia", "Button and TextView changed");
 						}
 					}).executeAsync();
 				}
 			}
-		});
+		});	
+	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//***Change Here***
+        startActivity(intent);
+        finish();
+        System.exit(0);
+		super.onBackPressed();
 	}
 
 }

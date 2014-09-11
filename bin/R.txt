@@ -338,7 +338,7 @@ int id action_context_bar 0x7f05001f
 int id action_menu_divider 0x7f050018
 int id action_menu_presenter 0x7f050019
 int id action_mode_close_button 0x7f050026
-int id action_settings 0x7f05006e
+int id action_settings 0x7f05006f
 int id activity_chooser_view_content 0x7f050027
 int id always 0x7f05000d
 int id beginning 0x7f050013
@@ -348,6 +348,7 @@ int id btnLearn 0x7f05005d
 int id btnQuiz 0x7f05005e
 int id btnSettings 0x7f05005f
 int id buttonLogin 0x7f05005b
+int id buttonStart 0x7f05006e
 int id checkbox 0x7f05002f
 int id collapseActionView 0x7f05000f
 int id com_facebook_body_frame 0x7f050050
@@ -432,11 +433,11 @@ int id split_action_bar 0x7f050020
 int id submit_area 0x7f05003b
 int id tabMode 0x7f050004
 int id text 0x7f05006d
+int id textViewLoginStatus 0x7f05005c
 int id title 0x7f05002d
 int id top_action_bar 0x7f050022
 int id up 0x7f050023
 int id useLogo 0x7f050005
-int id welcome 0x7f05005c
 int id withText 0x7f05000e
 int integer abc_max_action_buttons 0x7f0b0000
 int layout abc_action_bar_decor 0x7f030000
@@ -484,7 +485,8 @@ int layout main_layout 0x7f030029
 int layout module_animals_layout 0x7f03002a
 int layout modules_layout 0x7f03002b
 int layout modules_list_item 0x7f03002c
-int layout support_simple_spinner_dropdown_item 0x7f03002d
+int layout start_activity 0x7f03002d
+int layout support_simple_spinner_dropdown_item 0x7f03002e
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f08001b
 int string abc_action_bar_up_description 0x7f08001c
