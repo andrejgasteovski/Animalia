@@ -9,13 +9,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.animalia.http_request.GetResponse;
+import com.example.animalia.learn.ModuleDetails;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -23,7 +28,7 @@ import android.widget.SimpleAdapter;
 public class ListAnimals extends ListActivity {
 
 	private ProgressDialog pDialog;
-
+	private ArrayAdapter<AnimalShort> adapter;
 	// URL to get animals JSON
 	private static String url = "http://hcibiology.herokuapp.com/animals";
 
@@ -36,20 +41,41 @@ public class ListAnimals extends ListActivity {
 	JSONArray animals = null;
 
 	// Hashmap for ListView
-	ArrayList<HashMap<String, String>> animalsList;
+	ArrayList<AnimalShort> animalsList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.animals_layout);
 
-		animalsList = new ArrayList<HashMap<String, String>>();
+		animalsList = new ArrayList<AnimalShort>();
 		ListView lv = getListView();
 
-		// new GetContacts().execute();
 		parseJson();
+		setSearch();
 	}
-
+	private void setSearch(){
+		EditText txt=(EditText)findViewById(R.id.inputSearch);
+		txt.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				ListAnimals.this.adapter.getFilter().filter(s);
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				
+			}
+		});
+		
+	}
 	private void parseJson() {
 		String jsonStr = null;
 		try {
@@ -63,22 +89,15 @@ public class ListAnimals extends ListActivity {
 			try {
 
 				animals = new JSONArray(jsonStr);
-
 				// looping through All Animals
 				for (int i = 0; i < animals.length(); i++) {
 					JSONObject a = animals.getJSONObject(i);
-
+				
 					String id = a.getString(TAG_ID);
 					String name = a.getString(TAG_NAME);
 					String link = a.getString(TAG_LINK);
 
-					// tmp hashmap for single animal
-					HashMap<String, String> animal = new HashMap<String, String>();
-
-					// adding each child node to HashMap key => value
-					animal.put(TAG_ID, id);
-					animal.put(TAG_NAME, name);
-					animal.put(TAG_LINK, link);
+					AnimalShort animal=new AnimalShort(id, name, link);
 
 					// adding animal to animal list
 					animalsList.add(animal);
@@ -90,9 +109,11 @@ public class ListAnimals extends ListActivity {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
 
-		ListAdapter adapter = new SimpleAdapter(ListAnimals.this,
-				animalsList, R.layout.list_item, new String[] { TAG_NAME }, new int[] { R.id.name});
-
+		//adapter = new SimpleAdapter(ListAnimals.this,
+		//		animalsList, R.layout.list_item, new String[] { TAG_NAME }, new int[] { R.id.name});
+		int layout=android.R.layout.simple_list_item_1;
+		adapter = new ArrayAdapter<AnimalShort>(ListAnimals.this,layout,animalsList);
+		adapter.notifyDataSetChanged();
 		setListAdapter(adapter);
 	}
 

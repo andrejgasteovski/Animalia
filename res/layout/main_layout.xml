@@ -84,7 +84,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="Take a quiz"
-                android:src="@drawable/quiz" />
+                android:src="@drawable/quiz"
+                android:onClick="onClickQuiz" />
 
             <ImageButton
                 android:id="@+id/btnSettings"

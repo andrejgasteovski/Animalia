@@ -135,11 +135,15 @@ public class MainActivity extends Activity {
 	}
 
 	public void onClickLearn(View view) {
-		//Intent intent=new Intent(this, ListAnimals.class);
 		Intent intent=new Intent(this, ListModules.class);
 		startActivity(intent);
 	}
 	
+	//Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na zivotni
+	public void onClickQuiz(View view) {
+		Intent intent=new Intent(this, ListAnimals.class);
+		startActivity(intent);
+	}
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 	  super.onActivityResult(requestCode, resultCode, data);
