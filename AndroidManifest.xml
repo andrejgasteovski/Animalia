@@ -57,6 +57,11 @@
             android:label="@string/app_name" >
             
         </activity>
+        
+          <activity
+            android:name="com.example.animalia.highscores.HighscoresActivity"
+            android:label="Highscores" >
+        </activity>
          <meta-data android:value="@string/app_id" android:name="com.facebook.sdk.ApplicationId"/>
     </application>
 

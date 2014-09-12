@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.animalia.database.AccountDataSource;
+import com.example.animalia.highscores.HighscoresActivity;
 import com.example.animalia.http_request.GetResponse;
 import com.example.animalia.learn.ListModules;
 import com.facebook.Request;
@@ -136,6 +137,11 @@ public class MainActivity extends Activity {
 
 	public void onClickLearn(View view) {
 		Intent intent=new Intent(this, ListModules.class);
+		startActivity(intent);
+	}
+	
+	public void onClickHighscores(View view){
+		Intent intent = new Intent(this, HighscoresActivity.class);
 		startActivity(intent);
 	}
 	

@@ -12,4 +12,9 @@ public class JsonTags {
 	public static final String TAG_TEXT = "text";
 	public static final String TAG_PHOTO = "photo";
 	public static final String TAG_MODULE = "module";
+	
+	public static final String TAG_PLACE = "place";
+	public static final String TAG_USER = "user";
+	public static final String TAG_SCORE = "score";
+	public static final String TAG_TYPE = "type";
 }

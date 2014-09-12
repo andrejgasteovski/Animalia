@@ -108,7 +108,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="See high scores"
-                android:src="@drawable/high_scores" />
+                android:src="@drawable/high_scores" 
+                android:onClick="onClickHighscores"/>
 
             <ImageButton
                 android:id="@+id/btnAchievements"

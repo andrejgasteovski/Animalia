@@ -27,6 +27,7 @@ import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.AdapterView;
+
 public class ModuleDetails extends ListActivity {
 	// URL to get contacts JSON
 	private static String url;
@@ -108,8 +109,9 @@ public class ModuleDetails extends ListActivity {
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
+		
 		int layout=android.R.layout.simple_list_item_1;
-		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(ModuleDetails.this,layout,animalsList);
+		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(ModuleDetails.this, layout, animalsList);
 		adapter.notifyDataSetChanged();
 		setListAdapter(adapter);
 	}
