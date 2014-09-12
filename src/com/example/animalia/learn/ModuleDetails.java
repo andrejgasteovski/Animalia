@@ -30,7 +30,7 @@ import android.widget.AdapterView;
 public class ModuleDetails extends ListActivity {
 	// URL to get contacts JSON
 	private static String url;
-	private static String basicURL = "http://hcibiology.herokuapp.com";
+	public static String basicURL = "http://hcibiology.herokuapp.com";
 	// JSON Node names
 	private static final String TAG_NUMBER = "number";
 	private static final String TAG_MODULE = "module";
@@ -76,7 +76,8 @@ public class ModuleDetails extends ListActivity {
 					int position, long id) {
 				AnimalShort animal=(AnimalShort)getListView().getItemAtPosition(position);
 				Intent i=new Intent(ModuleDetails.this, AnimalDetails.class);
-				i.putExtra("url", animal.getLink());
+				i.putExtra("url", basicURL + animal.getLink());
+				i.putExtra("animals", animalsList);
 				startActivity(i);
 			}
 		});

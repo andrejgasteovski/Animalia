@@ -19,7 +19,7 @@ import com.example.animalia.http_request.GetResponse;
 public class StartActivity extends Activity{
 	
 	// URL to get contacts JSON
-	private static String url = "http://hcibiology.herokuapp.com/start";
+	private static String url = "http://hcibiology.herokuapp.com/accounts/start";
 	
 	// JSON Node names
 	private static final String TAG_MESSAGE = "message";

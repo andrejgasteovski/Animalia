@@ -1,6 +1,8 @@
 package com.example.animalia;
 
-public class AnimalShort {
+import java.io.Serializable;
+
+public class AnimalShort implements Serializable{
 	private String id;
 	private String name;
 	private String link;

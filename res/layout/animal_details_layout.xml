@@ -1,8 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
     
+    <LinearLayout   
+	    android:id="@+id/container"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    tools:context="com.example.animalia.learn.AnimalDetails"
+	    tools:ignore="MergeRootFrame" 
+	    android:orientation="vertical">
+    
+    <TextView 
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <ImageView 
+        android:id="@+id/imageViewAnimalPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Photo"/>
 
-</LinearLayout>
+    <TextView 
+        android:id="@+id/textViewArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <TextView 
+        android:id="@+id/textViewHabitat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <TextView 
+        android:id="@+id/textViewFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <TextView 
+        android:id="@+id/textViewSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <TextView 
+        android:id="@+id/textViewBabies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <TextView 
+        android:id="@+id/textViewFact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <TextView 
+        android:id="@+id/textViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    
+    <Button 
+        android:id="@+id/buttonPreviousAnimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Previous animal"
+        android:onClick="buttonOnClick"/>
+    
+    <Button 
+        android:id="@+id/buttonNextAnimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next animal"
+        android:onClick="buttonOnClick"/>
+    
+    <Button 
+        android:id="@+id/buttonBackToModule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to module"
+        android:onClick="backButtonOnClick"/>
+    
+    </LinearLayout>
+    
+</ScrollView>

@@ -74,7 +74,7 @@ public class ServiceHandler {
             httpEntity = httpResponse.getEntity();
             response = EntityUtils.toString(httpEntity);
             
-            Log.d("animalia", "Response: " + response);
+            //Log.d("animalia", "Response: " + response);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
