@@ -10,11 +10,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.animalia.quiz.QuestionActivity_" >
 
+     <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2.68"
+        android:text="Time remainging: 23" />
+    
     <TextView
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Large Text"
+        android:layout_height="120dp"
+        android:text="Do you know?"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
@@ -27,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:onClick="chooseAnswer"
+            android:background="@drawable/btnnormal"
             android:tag="1"
             android:text="Answer 1" />
 
@@ -35,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:onClick="chooseAnswer"
+            android:background="@drawable/btnnormal"
             android:tag="2"
             android:text="Answer 2" />
 
@@ -42,6 +51,7 @@
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/btnnormal"
             android:onClick="chooseAnswer"
             android:tag="3"
             android:text="Answer 3" />
@@ -50,17 +60,12 @@
             android:id="@+id/option4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:background="@drawable/btnnormal"
             android:onClick="chooseAnswer"
             android:tag="4"
             android:text="Answer 4" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewTime"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="2.68"
-        android:text="TextView" />
+   
 
 </LinearLayout>
