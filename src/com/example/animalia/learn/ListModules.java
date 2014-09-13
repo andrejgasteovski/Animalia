@@ -106,6 +106,9 @@ public class ListModules extends Activity {
 	}
 
 	private void putIntoLayout() {
+		
+		TextView tvAll = (TextView) findViewById(R.id.moduleAll);
+		tvAll.setText("All kinds");
 
 		HashMap<String, String> module0 = modulesList.get(0);
 		ImageView imgView0 = (ImageView) findViewById(R.id.img0);
@@ -167,5 +170,11 @@ public class ListModules extends Activity {
 			startActivity(i);
 			break;
 		}
+	}
+	
+	public void allClicked(View view){
+		Intent intent=new Intent(this, ListAnimals.class);
+		startActivity(intent);
+	
 	}
 }

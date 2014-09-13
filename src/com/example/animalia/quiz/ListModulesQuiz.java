@@ -103,7 +103,13 @@ public class ListModulesQuiz extends Activity {
 	}
 
 	private void putIntoLayout() {
+		
+		ImageView img = (ImageView) findViewById(R.id.imageViewAction);
+		img.setImageResource(R.drawable.choosequiz);
 
+		TextView tvAll = (TextView) findViewById(R.id.moduleAll);
+		tvAll.setText("Expert");
+		
 		HashMap<String, String> module0 = modulesList.get(0);
 		ImageView imgView0 = (ImageView) findViewById(R.id.img0);
 		new ImageLoadTask(module0.get(TAG_ICON), imgView0).execute(null, null);
@@ -164,5 +170,11 @@ public class ListModulesQuiz extends Activity {
 			startActivity(i);
 			break;
 		}
+	}
+	
+	public void allClicked(View view){
+		Intent intent=new Intent(this, QuestionActivity.class);
+		intent.putExtra("module", "Expert");
+		startActivity(intent);	
 	}
 }
