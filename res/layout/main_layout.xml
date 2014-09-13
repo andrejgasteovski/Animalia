@@ -2,17 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-   	android:background="@drawable/jungle_frame" >
+    android:background="@drawable/jungle_frame"
+    android:orientation="vertical" >
 
     <!-- TOP PART OF THE LAYOUT -->
- <TextView
-            android:id="@+id/textViewLoginStatus"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Welcome!" >
-        </TextView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,14 +28,16 @@
             android:layout_height="wrap_content"
             android:contentDescription="Animal of the day" >
         </ImageView>
-        
+
         <Button
             android:id="@+id/buttonLearnMore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Learn more..." 
+            android:background="@drawable/green_button"
             android:onClick="onClickLearnMore"
-            />
+            android:text="Learn more..."
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
     </LinearLayout>
     <!-- END OD TOP PART OF THE LAYOUT -->
     <!-- BOTTOM PART OF THE LAYOUT -->
@@ -53,8 +49,6 @@
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical" >
-
-   
 
         <!-- FIRST ROW OF BUTTONS -->
 
@@ -93,9 +87,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
             android:gravity="center"
-            android:orientation="horizontal" 
-            android:layout_marginBottom="50dp">
+            android:orientation="horizontal" >
 
             <ImageView
                 android:id="@+id/btnHighScores"
@@ -111,8 +105,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="See your achievements"
-                android:src="@drawable/achievements" />
-            -->
+                android:src="@drawable/achievements"/>-->
 
             <ImageView
                 android:id="@+id/btnSearch"
@@ -129,20 +122,28 @@
                 android:src="@drawable/profile" />
         </LinearLayout>
         <!-- END OF SECOND ROW -->
-             <!-- FACEBOOK STUFF -->
+        <!-- FACEBOOK STUFF -->
+
+        <TextView
+            android:id="@+id/textViewLoginStatus"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome!" >
+        </TextView>
 
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/green_button"
             android:onClick="loginFacebook"
-            android:text="Login using Facebook"
-             />
-
-       
+            android:text="Login using Facebook" 
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"/>
 
         <!-- END OF FACEBOOK STUFF -->
-        
+
     </LinearLayout>
     <!-- END OF BOTTOM PART OF THE LAYOUT -->
 
