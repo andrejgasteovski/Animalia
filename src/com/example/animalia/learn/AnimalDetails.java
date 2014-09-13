@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +17,7 @@ import android.widget.TextView;
 
 import com.example.animalia.AnimalShort;
 import com.example.animalia.ImageLoadTask;
-import com.example.animalia.R;
+
 import com.example.animalia.http_request.GetResponse;
 import com.example.animalia.http_request.JsonTags;
 public class AnimalDetails extends Activity{
@@ -144,6 +145,9 @@ public class AnimalDetails extends Activity{
 		btnNextAnimal = (Button)findViewById(R.id.buttonNextAnimal);
 		btnPreviousAnimal = (Button)findViewById(R.id.buttonPreviousAnimal);
 		btnBackToModule = (Button)findViewById(R.id.buttonBackToModule);
+		
+		Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Cookies.ttf");
+		tvName.setTypeface(face);
 		
 		Log.d("animalia", "All views initialized");
 	}
