@@ -140,6 +140,13 @@ public class MainActivity extends Activity {
 		Intent intent=new Intent(this, ListModules.class);
 		startActivity(intent);
 	}
+	public void onClickProfile(View view) {
+		Intent intent=new Intent(this, Profile.class);
+		intent.putExtra("name", name);
+		intent.putExtra("username", username);
+		startActivity(intent);
+	}
+	
 	
 	public void onClickHighscores(View view){
 		Intent intent = new Intent(this, HighscoresActivity.class);

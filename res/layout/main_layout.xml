@@ -85,12 +85,11 @@
                 android:layout_height="70dp"
                 android:contentDescription="Take a quiz"
                 android:onClick="onClickQuiz"
-                android:src="@drawable/test"
-                />
+                android:src="@drawable/test" />
 
             <ImageView
                 android:id="@+id/btnSettings"
-               android:layout_width="70dp"
+                android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="Settings"
                 android:src="@drawable/settings" />
@@ -106,26 +105,34 @@
 
             <ImageView
                 android:id="@+id/btnHighScores"
-               android:layout_width="70dp"
+                android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="See high scores"
-                android:src="@drawable/highscores" 
-                android:onClick="onClickHighscores"/>
+                android:onClick="onClickHighscores"
+                android:src="@drawable/highscores" />
 
-         <!--    <ImageView
+            <!--
+                 <ImageView
                 android:id="@+id/btnAchievements"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="See your achievements"
-                android:src="@drawable/achievements" /> -->
+                android:src="@drawable/achievements" />
+            -->
 
             <ImageView
                 android:id="@+id/btnSearch"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/abc_ic_search_api_holo_light" 
-                android:onClick="onClickSearch" />
+                android:onClick="onClickSearch"
+                android:src="@drawable/abc_ic_search_api_holo_light" />
 
+            <ImageView
+                android:id="@+id/btnProfile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:onClick="onClickProfile"
+                android:src="@drawable/profile" />
         </LinearLayout>
         <!-- END OF SECOND ROW -->
     </LinearLayout>
