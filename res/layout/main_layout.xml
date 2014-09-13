@@ -71,27 +71,27 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnLearn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="Learn about animals"
                 android:onClick="onClickLearn"
                 android:src="@drawable/learn" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnQuiz"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="Take a quiz"
                 android:onClick="onClickQuiz"
-                android:src="@drawable/quiz"
+                android:src="@drawable/test"
                 />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnSettings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+               android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="Settings"
                 android:src="@drawable/settings" />
         </LinearLayout>
@@ -104,25 +104,25 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnHighScores"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+               android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="See high scores"
-                android:src="@drawable/high_scores" 
+                android:src="@drawable/highscores" 
                 android:onClick="onClickHighscores"/>
 
-            <ImageButton
+         <!--    <ImageView
                 android:id="@+id/btnAchievements"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:contentDescription="See your achievements"
-                android:src="@drawable/achievements" />
+                android:src="@drawable/achievements" /> -->
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/btnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/abc_ic_search_api_holo_light" 
                 android:onClick="onClickSearch" />
 
