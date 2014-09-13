@@ -27,11 +27,14 @@
             android:layout_height="wrap_content"
             android:contentDescription="Animal of the day" >
         </ImageView>
-
-        <TextView
+        
+        <Button
+            android:id="@+id/buttonLearnMore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="More..." />
+            android:text="Learn more..." 
+            android:onClick="onClickLearnMore"
+            />
     </LinearLayout>
     <!-- END OD TOP PART OF THE LAYOUT -->
     <!-- BOTTOM PART OF THE LAYOUT -->

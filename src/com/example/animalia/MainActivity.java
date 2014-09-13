@@ -21,7 +21,9 @@ import android.widget.TextView;
 import com.example.animalia.database.AccountDataSource;
 import com.example.animalia.highscores.HighscoresActivity;
 import com.example.animalia.http_request.GetResponse;
+import com.example.animalia.learn.AnimalDetails;
 import com.example.animalia.learn.ListModules;
+import com.example.animalia.learn.ModuleDetails;
 import com.example.animalia.quiz.ListModulesQuiz;
 import com.facebook.Request;
 import com.facebook.Response;
@@ -33,6 +35,7 @@ public class MainActivity extends Activity {
 
 	// URL to get contacts JSON
 	private static String url = "http://hcibiology.herokuapp.com/animals/aotd";
+	public static String URL_BASE = "http://hcibiology.herokuapp.com";
 
 	// JSON Node names
 	private static final String TAG_ID = "id";
@@ -41,6 +44,7 @@ public class MainActivity extends Activity {
 	private static final String TAG_PHOTO = "photo";
 
 	private JSONObject animalOfTheDay;
+	private String animalOfTheDayLink;
 
 	//user data
 	private String username;
@@ -95,6 +99,106 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+
+
+	public void onClickLearn(View view) {
+		Intent intent=new Intent(this, ListModules.class);
+		startActivity(intent);
+	}
+	public void onClickProfile(View view) {
+		Intent intent=new Intent(this, Profile.class);
+		intent.putExtra("name", name);
+		intent.putExtra("username", username);
+		startActivity(intent);
+	}
+	
+	public void onClickHighscores(View view){
+		Intent intent = new Intent(this, HighscoresActivity.class);
+		startActivity(intent);
+	}
+	
+	public void onClickQuiz(View view) {
+		// Intent intent=new Intent(this, ListAnimals.class);
+		Intent intent = new Intent(this, ListModulesQuiz.class);
+		startActivity(intent);
+	}
+	
+	//Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na zivotni
+	public void onClickSearch(View view) {
+		Intent intent=new Intent(this, ListAnimals.class);
+		startActivity(intent);
+	}
+	
+	
+	
+	//event za klik na Learn more.. kaj Animal of the day
+	public void onClickLearnMore(View view){
+		Intent i=new Intent(MainActivity.this, AnimalDetails.class);
+		i.putExtra("url", URL_BASE + animalOfTheDayLink);
+		i.putExtra("animals", ListAnimals.getAnimalsList());
+		startActivity(i);
+	}
+	
+	//ova se koristi za logiranjeto preku FB
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	  super.onActivityResult(requestCode, resultCode, data);
+	  Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+	}
+	
+	//logiranje preku FB
+	public void loginFacebook(View view){
+		Session.openActiveSession(this, true, new Session.StatusCallback() {
+			@Override
+			public void call(Session session, SessionState state, Exception exception) {
+				if(session.isOpened()){
+					Request.newMeRequest(session, new Request.GraphUserCallback() {	
+						@Override
+						public void onCompleted(GraphUser user, Response response) {
+							//tvLoginStatus.setText("Hello " + user.getName() +  "!");
+							name = user.getName();
+							AccountDataSource dao = new AccountDataSource(getApplicationContext());
+							dao.open();
+							dao.updateName(name);
+							checkLoginStatus();
+							Log.d("animalia", "Button and TextView changed");
+							
+							String firstName = user.getFirstName();
+							String lastName = user.getLastName();
+							String email = user.getUsername();
+							updateUserInServerDatabase(firstName, lastName, email);
+						}
+					}).executeAsync();
+				}
+			}
+		});	
+	}
+	
+	private void updateUserInServerDatabase(String firstName, String lastName, String emial){
+		String url = "http://hcibiology.herokuapp.com/accounts/update?username=" + username + "&name=" + firstName + "&surname=" + lastName + "&email=" + emial;
+		
+		String jsonStr = null;
+		try {
+			jsonStr = new GetResponse().execute(url).get();
+		} catch (Exception e) {
+			Log.d("animalia", e.getMessage());
+		}
+		
+		Log.d("animalia", "user updated");
+	}
+	
+	//koga ke se klikne na kopceto Back na tel. da se zatvori aplikacijata
+	@Override
+	public void onBackPressed() {
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//***Change Here***
+        startActivity(intent);
+        finish();
+        System.exit(0);
+		super.onBackPressed();
+	}
+	
 	private void parseJson() throws IOException {
 		String jsonStr = null;
 		try {
@@ -126,7 +230,8 @@ public class MainActivity extends Activity {
 				ImageView imageView = (ImageView) findViewById(R.id.image);
 				new ImageLoadTask(photo, imageView).execute(null, null);
 					
-				
+				//used in onClickLearnMore method
+				animalOfTheDayLink = link;
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -135,74 +240,4 @@ public class MainActivity extends Activity {
 		}
 
 	}
-
-	public void onClickLearn(View view) {
-		Intent intent=new Intent(this, ListModules.class);
-		startActivity(intent);
-	}
-	public void onClickProfile(View view) {
-		Intent intent=new Intent(this, Profile.class);
-		intent.putExtra("name", name);
-		intent.putExtra("username", username);
-		startActivity(intent);
-	}
-	
-	
-	public void onClickHighscores(View view){
-		Intent intent = new Intent(this, HighscoresActivity.class);
-		startActivity(intent);
-	}
-	
-	public void onClickQuiz(View view) {
-		// Intent intent=new Intent(this, ListAnimals.class);
-		Intent intent = new Intent(this, ListModulesQuiz.class);
-		startActivity(intent);
-	}
-	
-	//Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na zivotni
-	public void onClickSearch(View view) {
-		Intent intent=new Intent(this, ListAnimals.class);
-		startActivity(intent);
-	}
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-	  super.onActivityResult(requestCode, resultCode, data);
-	  Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
-	}
-	
-	public void loginFacebook(View view){
-		Session.openActiveSession(this, true, new Session.StatusCallback() {
-			@Override
-			public void call(Session session, SessionState state, Exception exception) {
-				if(session.isOpened()){
-					Request.newMeRequest(session, new Request.GraphUserCallback() {	
-						@Override
-						public void onCompleted(GraphUser user, Response response) {
-							//tvLoginStatus.setText("Hello " + user.getName() +  "!");
-							name = user.getName();
-							AccountDataSource dao = new AccountDataSource(getApplicationContext());
-							dao.open();
-							Log.d("animalia", "DAO is open");
-							dao.updateName(name);
-							Log.d("animalia", "Account name is updated");
-							checkLoginStatus();
-							Log.d("animalia", "Button and TextView changed");
-						}
-					}).executeAsync();
-				}
-			}
-		});	
-	}
-	
-	@Override
-	public void onBackPressed() {
-		Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//***Change Here***
-        startActivity(intent);
-        finish();
-        System.exit(0);
-		super.onBackPressed();
-	}
-
 }

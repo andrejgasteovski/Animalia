@@ -55,6 +55,7 @@ public class AccountDataSource {
 	
 	//should be called when the quiz is finished.. 
 	//this will update the points of all the accounts in the database (should have only one account)
+	
 	public boolean updatePoints(int points){
 		//database.execSQL("UPDATE " + MySQLiteHelper.TABLE_ACCOUNTS + " SET " + MySQLiteHelper.COLUMN_POINTS + " = " + points);
 		ContentValues values = new ContentValues();

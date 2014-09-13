@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.animalia.http_request.GetResponse;
+import com.example.animalia.learn.AnimalDetails;
 import com.example.animalia.learn.ModuleDetails;
 
 import android.app.ListActivity;
@@ -19,6 +20,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
@@ -37,23 +39,39 @@ public class ListAnimals extends ListActivity {
 	private static final String TAG_NAME = "name";
 	private static final String TAG_LINK = "link";
 
-	// animals JSONArray
-	JSONArray animals = null;
-
 	// Hashmap for ListView
-	ArrayList<AnimalShort> animalsList;
+	ArrayList<AnimalShort> animals;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.animals_layout);
 
-		animalsList = new ArrayList<AnimalShort>();
+		animals = getAnimalsList();
+		
 		ListView lv = getListView();
+		setListAdapter();
 
-		parseJson();
-		setSearch();
+		setSearch();	
+		initializeList();
 	}
+	
+	private void initializeList(){
+		getListView().setClickable(true);
+		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				AnimalShort animal=(AnimalShort)getListView().getItemAtPosition(position);
+				Intent i=new Intent(ListAnimals.this, AnimalDetails.class);
+				i.putExtra("url", MainActivity.URL_BASE + animal.getLink());
+				i.putExtra("animals", animals);
+				startActivity(i);
+			}
+		});
+	}
+	
 	private void setSearch(){
 		EditText txt=(EditText)findViewById(R.id.inputSearch);
 		txt.addTextChangedListener(new TextWatcher() {
@@ -73,10 +91,15 @@ public class ListAnimals extends ListActivity {
 			public void afterTextChanged(Editable s) {
 				
 			}
-		});
-		
+		});	
 	}
-	private void parseJson() {
+	
+	
+	//isto so parseJson() ...
+	//napraena e static zatoa sto se koristi vo MainActivity
+	public static ArrayList<AnimalShort> getAnimalsList() {
+		ArrayList<AnimalShort> animalsList = new ArrayList<AnimalShort>();
+		JSONArray animals = null;
 		String jsonStr = null;
 		try {
 			jsonStr = new GetResponse().execute(url).get();
@@ -108,15 +131,15 @@ public class ListAnimals extends ListActivity {
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
+		
+		return animalsList;
+	}
 
-		//adapter = new SimpleAdapter(ListAnimals.this,
-		//		animalsList, R.layout.list_item, new String[] { TAG_NAME }, new int[] { R.id.name});
+	private void setListAdapter(){
 		int layout=android.R.layout.simple_list_item_1;
-		adapter = new ArrayAdapter<AnimalShort>(ListAnimals.this,layout,animalsList);
+		adapter = new ArrayAdapter<AnimalShort>(ListAnimals.this,layout,animals);
 		adapter.notifyDataSetChanged();
 		setListAdapter(adapter);
 	}
-
-	
 
 }
