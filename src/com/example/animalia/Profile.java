@@ -22,8 +22,8 @@ public class Profile extends Activity {
 
 	// JSON Node names
 	private static final String TAG_USER = "user";
-	private static final String TAG_HIGHSCORE = "name";
-	private static final String TAG_RANKING = "username";
+	private static final String TAG_HIGHSCORE = "highscore";
+	private static final String TAG_RANKING = "ranking";
 	private static final String TAG_EMAIL = "email";
 
 	private String module1;
