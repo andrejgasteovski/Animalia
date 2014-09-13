@@ -22,6 +22,7 @@ import com.example.animalia.database.AccountDataSource;
 import com.example.animalia.highscores.HighscoresActivity;
 import com.example.animalia.http_request.GetResponse;
 import com.example.animalia.learn.ListModules;
+import com.example.animalia.quiz.ListModulesQuiz;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
@@ -145,8 +146,14 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 	
-	//Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na zivotni
 	public void onClickQuiz(View view) {
+		// Intent intent=new Intent(this, ListAnimals.class);
+		Intent intent = new Intent(this, ListModulesQuiz.class);
+		startActivity(intent);
+	}
+	
+	//Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na zivotni
+	public void onClickSearch(View view) {
 		Intent intent=new Intent(this, ListAnimals.class);
 		startActivity(intent);
 	}

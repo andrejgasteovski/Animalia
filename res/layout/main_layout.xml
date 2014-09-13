@@ -84,8 +84,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="Take a quiz"
+                android:onClick="onClickQuiz"
                 android:src="@drawable/quiz"
-                android:onClick="onClickQuiz" />
+                />
 
             <ImageButton
                 android:id="@+id/btnSettings"
@@ -117,6 +118,14 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="See your achievements"
                 android:src="@drawable/achievements" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/abc_ic_search_api_holo_light" 
+                android:onClick="onClickSearch" />
+
         </LinearLayout>
         <!-- END OF SECOND ROW -->
     </LinearLayout>
