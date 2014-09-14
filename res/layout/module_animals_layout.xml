@@ -2,27 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/module"
+    <!-- TITLE -->
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal" >
 
-    <ImageView
-        android:contentDescription="Picture for the module"
-        android:id="@+id/icon"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:contentDescription="Picture for the module" />
+
+        <ImageView
+            android:id="@+id/module"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:contentDescription="Title" />
+    </LinearLayout>
+    <!-- END TITLE -->
 
     <TextView
         android:id="@+id/text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-40dp"
         android:padding="5dp" />
 
     <!-- CENTRAL PART FOR SPOTLIGHT ANIMAL -->
@@ -30,36 +39,35 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center" >
+        android:gravity="center"
+        android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:padding="5dp"
-            android:text="Spotlight animal:"
-            android:layout_gravity="center" />
+            android:text="Spotlight animal:" />
         <!-- START PART FOR NAME, PICTURE, TEXT -->
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center" >
+            android:layout_gravity="center"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/spot_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:padding="5dp" />
 
             <ImageView
                 android:id="@+id/spot_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:contentDescription="Photo of the spot animal"
-                 />
+                android:contentDescription="Photo of the spot animal" />
 
             <TextView
                 android:id="@+id/spot_fact"
@@ -72,17 +80,17 @@
     <!-- END CENTRAL PART -->
     <!-- START LIST WITH ANIMALS FROM THIS MODULE -->
 
-	 <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="Animals in this module:"
-            android:layout_gravity="center" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="Animals in this module:" />
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
-         />
+        android:layout_height="200dp" />
     <!-- END LIST WITH ANIMALS FROM THIS MODULE -->
 
 </LinearLayout>

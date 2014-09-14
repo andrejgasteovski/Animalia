@@ -1,4 +1,5 @@
 package com.example.animalia.learn;
+
 import com.example.animalia.*;
 
 import java.util.ArrayList;
@@ -68,21 +69,26 @@ public class ModuleDetails extends ListActivity {
 		parseJson();
 		initializeList();
 	}
-	private void initializeList(){
-		getListView().setClickable(true);
-		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				AnimalShort animal=(AnimalShort)getListView().getItemAtPosition(position);
-				Intent i=new Intent(ModuleDetails.this, AnimalDetails.class);
-				i.putExtra("url", basicURL + animal.getLink());
-				i.putExtra("animals", animalsList);
-				startActivity(i);
-			}
-		});
+	private void initializeList() {
+		getListView().setClickable(true);
+		getListView().setOnItemClickListener(
+				new AdapterView.OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> parent, View view,
+							int position, long id) {
+						AnimalShort animal = (AnimalShort) getListView()
+								.getItemAtPosition(position);
+						Intent i = new Intent(ModuleDetails.this,
+								AnimalDetails.class);
+						i.putExtra("url", basicURL + animal.getLink());
+						i.putExtra("animals", animalsList);
+						startActivity(i);
+					}
+				});
 	}
+
 	private void parseJson() {
 		String jsonStr = null;
 		try {
@@ -109,9 +115,10 @@ public class ModuleDetails extends ListActivity {
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
-		
-		int layout=android.R.layout.simple_list_item_1;
-		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(ModuleDetails.this, layout, animalsList);
+
+		int layout = android.R.layout.simple_list_item_1;
+		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(
+				ModuleDetails.this, layout, animalsList);
 		adapter.notifyDataSetChanged();
 		setListAdapter(adapter);
 	}
@@ -121,16 +128,36 @@ public class ModuleDetails extends ListActivity {
 		String name = module.getString(TAG_MODULE);
 		String text = module.getString(TAG_TEXT);
 		String icon = module.getString(TAG_ICON);
-		
+
 		// get the elements from layout
-		TextView tvName = (TextView) findViewById(R.id.module);
+
 		TextView tvText = (TextView) findViewById(R.id.text);
 		ImageView imageView = (ImageView) findViewById(R.id.icon);
 
 		// set data
-		tvName.setText(name);
+		setTitle(name);
 		tvText.setText(text);
 		new ImageLoadTask(icon, imageView).execute(null, null);
+	}
+
+	private void setTitle(String name) {
+		Log.d("caci", "Title: "+name);
+		ImageView imgName = (ImageView) findViewById(R.id.module);
+		if (name.equals("Amphibians"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.amphibians));
+		else if (name.equals("Arthropods"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.arthopods));
+		else if (name.equals("Birds"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.birds));
+		else if (name.equals("Mammals"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.mammals));
+		else if (name.equals("Reptiles"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.reptiles));
 	}
 
 	private void setSpotlight() throws JSONException {
@@ -155,12 +182,12 @@ public class ModuleDetails extends ListActivity {
 		// looping through All Animals
 		for (int i = 0; i < animals.length(); i++) {
 			JSONObject a = animals.getJSONObject(i);
-		
+
 			String id = a.getString(TAG_ID);
 			String name = a.getString(TAG_NAME);
 			String link = a.getString(TAG_LINK);
 
-			AnimalShort animal=new AnimalShort(id, name, link);
+			AnimalShort animal = new AnimalShort(id, name, link);
 
 			// adding animal to animal list
 			animalsList.add(animal);
