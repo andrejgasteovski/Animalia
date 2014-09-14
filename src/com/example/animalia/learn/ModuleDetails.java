@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ import com.example.animalia.MainActivity;
 import com.example.animalia.R;
 import com.example.animalia.http_request.GetResponse;
 
-public class ModuleDetails extends ListActivity {
+public class ModuleDetails extends Activity {
 	// URL to get contacts JSON
 	private String urlModule;
 	public static String basicURL = "http://hcibiology.herokuapp.com";
@@ -63,9 +64,9 @@ public class ModuleDetails extends ListActivity {
 		urlModule = intent.getStringExtra("url");
 		
 		parseJson();
-		initializeList();
+		//initializeList();
 	}
-
+/*
 	private void initializeList() {
 		getListView().setClickable(true);
 		getListView().setOnItemClickListener(
@@ -83,7 +84,7 @@ public class ModuleDetails extends ListActivity {
 						startActivity(i);
 					}
 				});
-	}
+	}*/
 
 	private void parseJson() {
 		String jsonStr = null;
@@ -111,12 +112,12 @@ public class ModuleDetails extends ListActivity {
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
-
+/*
 		int layout = android.R.layout.simple_list_item_1;
 		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(
 				ModuleDetails.this, layout, animalsList);
 		adapter.notifyDataSetChanged();
-		setListAdapter(adapter);
+		setListAdapter(adapter);*/
 	}
 
 	private void setModuleInfo(JSONObject module) throws JSONException {
