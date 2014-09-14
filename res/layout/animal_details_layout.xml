@@ -23,9 +23,9 @@
             <ImageView
                 android:id="@+id/imageViewAnimalDetails"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/mammals" />
+                android:src="@drawable/learnabout" />
 
             <TextView
                 android:id="@+id/textViewName"

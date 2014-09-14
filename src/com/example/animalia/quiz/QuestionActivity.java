@@ -41,6 +41,7 @@ public class QuestionActivity extends Activity {
 
 	int questionNumber;
 	int guesses;
+	TextView textViewQuestionNumber;
 	TextView textViewQuestion;
 	TextView textViewTime;
 	Button option1;
@@ -60,6 +61,7 @@ public class QuestionActivity extends Activity {
 
 		guesses = 0;
 		questionNumber = 0;
+		textViewQuestionNumber = (TextView) findViewById(R.id.textViewQuestionNumber);
 		textViewQuestion = (TextView) findViewById(R.id.textViewQuestion);
 		textViewTime = (TextView) findViewById(R.id.textViewTime);
 		option1 = (Button) findViewById(R.id.option1);
@@ -138,7 +140,8 @@ public class QuestionActivity extends Activity {
 
 	// TODO Check if it's necessary to pass questionNumber
 	private void fillData() {
-		textViewQuestion.setText("Question " + (questionNumber+1) + "/5: " + questionsArray.get(questionNumber)
+		textViewQuestionNumber.setText("Question " + (questionNumber+1) + "/5: ");
+		textViewQuestion.setText(questionsArray.get(questionNumber)
 				.getQuestion());
 		ArrayList<String> opts = questionsArray.get(questionNumber)
 				.getAnswers();
