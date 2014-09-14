@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewModuleDetails"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:id="@+id/scrollViewModuleDetails">
-
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="vertical" >
-
-    <!-- TITLE -->
+    android:layout_height="fill_parent"
+    android:background="@drawable/jungle_background051" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:orientation="horizontal" 
-        android:layout_gravity="center_horizontal">
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <!-- TITLE -->
 
         <ImageView
             android:id="@+id/icon"
@@ -30,71 +24,82 @@
             android:id="@+id/module"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            
-            android:contentDescription="Title" />
-    </LinearLayout>
-    <!-- END TITLE -->
+            android:layout_marginLeft="30dp"
+            android:contentDescription="Title"
+            android:layout_marginTop="-20dp" />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:padding="5dp" />
-
-    <!-- CENTRAL PART FOR SPOTLIGHT ANIMAL -->
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:text="Spotlight animal:" />
-        <!-- START PART FOR NAME, PICTURE, TEXT -->
-
-        <LinearLayout
+        <!-- END TITLE -->
+          <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="170dp"
+            android:background="@drawable/module_layout"
+            android:gravity="center"
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/spot_name"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="5dp" />
-
-            <ImageView
-                android:id="@+id/spot_photo"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:contentDescription="Photo of the spot animal" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="Spotlight animal:"
+                android:textColor="#006633"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <!-- START PART FOR NAME, PICTURE, TEXT -->
 
-            <TextView
-                android:id="@+id/spot_fact"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp" />
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/spot_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:id="@+id/spot_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:contentDescription="Photo of the spot animal" />
+
+                <TextView
+                    android:id="@+id/spot_fact"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp" />
+            </LinearLayout>
+            <!-- END PART FOR NAME, PICTURE, TEXT -->
+
         </LinearLayout>
-        <!-- END PART FOR NAME, PICTURE, TEXT -->
-    </LinearLayout>
-    <!-- END CENTRAL PART -->
-    <!-- START LIST WITH ANIMALS FROM THIS MODULE -->
+        <!-- END CENTRAL PART -->
 
-	<Button 
-	    android:id="@+id/buttonViewAnimals"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:onClick="onClickViewAnimals"
-	    android:text="View animals"/>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            android:gravity="center" />
 
+        <!-- CENTRAL PART FOR SPOTLIGHT ANIMAL -->
+
+      
+        <!-- START LIST WITH ANIMALS FROM THIS MODULE -->
+
+        <Button
+            android:id="@+id/buttonViewAnimals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_button"
+            android:onClick="onClickViewAnimals"
+            android:text="View animals in this module" />
+        <!--
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -107,9 +112,11 @@
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="200dp"/>
-    
-    <!-- END LIST WITH ANIMALS FROM THIS MODULE -->
+        -->
 
-</LinearLayout>
+
+        <!-- END LIST WITH ANIMALS FROM THIS MODULE -->
+
+    </LinearLayout>
+
 </ScrollView>
-
