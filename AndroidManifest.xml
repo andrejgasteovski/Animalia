@@ -18,6 +18,7 @@
         <activity
             android:name=".ListAnimals"
             android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
@@ -27,15 +28,18 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
-          <activity
+        <activity
             android:name=".Profile"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name=".StartActivity"
-            android:label="Animalia" >
+            android:label="Animalia"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,15 +48,18 @@
         </activity>
         <activity
             android:name="com.facebook.LoginActivity"
-            android:label="Facebook login" >
+            android:label="Facebook login"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name=".learn.ModuleDetails"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name=".learn.AnimalDetails"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name=".highscores.HighscoresActivity"
@@ -65,19 +72,23 @@
 
         <activity
             android:name=".quiz.DisplayScoreActivity"
-            android:label="@string/title_activity_display_score" >
+            android:label="@string/title_activity_display_score"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name=".quiz.ListModulesQuiz"
-            android:label="@string/title_activity_list_modules_quiz" >
+            android:label="@string/title_activity_list_modules_quiz"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name=".quiz.QuestionActivity"
-            android:label="@string/title_activity_question" >
+            android:label="@string/title_activity_question"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
             android:name="com.example.animalia.quiz.TimeoutActivity"
-            android:label="@string/title_activity_timeout" >
+            android:label="@string/title_activity_timeout"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
     </application>
 

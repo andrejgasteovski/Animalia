@@ -7,11 +7,17 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.animalia.MainActivity;
 import com.example.animalia.R;
+import com.example.animalia.highscores.HighscoresActivity;
 import com.example.animalia.http_request.GetResponse;
 
 public class DisplayScoreActivity extends Activity {
@@ -21,26 +27,32 @@ public class DisplayScoreActivity extends Activity {
 	// JSON Node names
 	private static final String TAG_SCORE = "score";
 	private static final String TAG_STARS = "stars";
-	
+	public static final String NAME = "name";
+	public static final String USERNAME = "username";
+	public static final String POINTS = "points";
+
 	String score;
 	int stars;
 	TextView textViewScore;
 	TextView textViewStars;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.display_score_layout);
 		Intent intent = getIntent();
-		//TODO
-		String userName = "usrb1edeb477840d02889ff24e756dc57e1";
+		//
+		SharedPreferences sharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String userName = sharedPreferences.getString("USER_NAME",
+				"usrb1edeb477840d02889ff24e756dc57e1");
 		String timeLeft = intent.getStringExtra("timeleft");
 		String guesses = intent.getStringExtra("guesses");
 		String type = intent.getStringExtra("type");
-		url = basicURL + "username="+userName+"&type="+type+"&guesses="+guesses+"&timeleft="+timeLeft;
-		
+		url = basicURL + "username=" + userName + "&type=" + type + "&guesses="
+				+ guesses + "&timeleft=" + timeLeft;
+
 		textViewScore = (TextView) findViewById(R.id.textViewScore);
-		textViewStars = (TextView) findViewById(R.id.textViewStars);
 		parseJson();
 	}
 
@@ -56,22 +68,61 @@ public class DisplayScoreActivity extends Activity {
 		if (jsonStr != null) {
 			try {
 				JSONObject response = new JSONObject(jsonStr);
-				score =response.getString(TAG_SCORE);
+				score = response.getString(TAG_SCORE);
 				stars = Integer.parseInt(response.getString(TAG_STARS));
-				
+
+				setStars();
+
 				textViewScore.setText(score);
-				textViewStars.setText("You have " + stars + " stars!");
+				Log.e("parsing", "----------------------------" + score + " "
+						+ stars);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 
-			
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
-		}		
-		
-	}	
-	
+		}
+
+	}
+
+	public void setStars() {
+		if (stars == 1)
+			return;
+		if (stars >= 2) {
+			ImageView star2 = (ImageView) findViewById(R.id.imageViewStar2);
+			star2.setImageDrawable(getResources().getDrawable(
+					R.drawable.star_yellow));
+			if (stars == 3)
+			{
+				ImageView star3 = (ImageView) findViewById(R.id.imageViewStar2);
+				star3.setImageDrawable(getResources().getDrawable(
+						R.drawable.star_yellow));
+			}
+	    }
+	}
+
+	public void goToMainMenu(View view) {
+		SharedPreferences sharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		String username = sharedPreferences.getString("USER_NAME", "none");
+		String name = sharedPreferences.getString("NAME", "none");
+		int points = sharedPreferences.getInt("POINTS", 0);
+
+		Intent intent = new Intent(this.getApplicationContext(),
+				MainActivity.class);
+		intent.putExtra(USERNAME, username);
+		intent.putExtra(NAME, name);
+		intent.putExtra(POINTS, points);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(intent);
+
+	}
+
+	public void onClickHighscores(View view) {
+		Intent intent = new Intent(this, HighscoresActivity.class);
+		startActivity(intent);
+	}
+
 }

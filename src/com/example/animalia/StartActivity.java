@@ -8,7 +8,10 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
@@ -60,6 +63,14 @@ public class StartActivity extends Activity{
 		} else{
 			startMainActivity();
 		}
+		
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		Editor editor = sharedPreferences.edit();
+		editor.putString("USER_NAME", username);
+		editor.putString("NAME", name);
+		editor.putInt("POINTS", points);
+		editor.commit();
+		
 	}
 	
 	private int getUserState(){

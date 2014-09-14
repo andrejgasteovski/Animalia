@@ -1,39 +1,87 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/welldone"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.animalia.quiz.DisplayScoreActivity" >
 
-    <TextView
-        android:id="@+id/textViewTime"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Your score is:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textViewScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="69"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="70dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1" 
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp">
 
-    <TextView
-        android:id="@+id/textViewStars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewScore"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="32dp"
-        android:text="Two stars"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+            <ImageView
+                android:id="@+id/imageViewStar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star_yellow" />
 
-</RelativeLayout>
+            <ImageView
+                android:id="@+id/imageViewStar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star_grey" />
+
+            <ImageView
+                android:id="@+id/imageViewStar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star_grey" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Your score is:"
+            android:textAppearance="?android:attr/textAppearanceLarge" 
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="60"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="70sp" />
+
+        <Button
+            android:id="@+id/btnSoreViewHighscores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/blue_button"
+            android:onClick="onClickHighscores"
+            android:text="Highscores"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btnScoreMainMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/blue_button"
+            android:onClick="goToMainMenu"
+            android:text="Go to main menu"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+</LinearLayout>

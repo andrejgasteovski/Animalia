@@ -1,0 +1,54 @@
+﻿Merge branch 'quiz'
+
+Conflicts:
+	.classpath
+	res/drawable/blue_button.xml
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    .classpath
+#	new file:   assets/fonts/cookies.ttf
+#	new file:   res/drawable-hdpi/about.png
+#	new file:   res/drawable-hdpi/amphibiansquiz.png
+#	new file:   res/drawable-hdpi/arthropodsquiz.png
+#	new file:   res/drawable-hdpi/bg_light.jpg
+#	new file:   res/drawable-hdpi/birdsquiz.png
+#	new file:   res/drawable-hdpi/btn_default.png
+#	new file:   res/drawable-hdpi/btn_default_pressed.png
+#	new file:   res/drawable-hdpi/btn_option.png
+#	new file:   res/drawable-hdpi/btn_option_pressed.png
+#	new file:   res/drawable-hdpi/correct.png
+#	new file:   res/drawable-hdpi/mainmenu.jpg
+#	new file:   res/drawable-hdpi/mammalsquiz.png
+#	new file:   res/drawable-hdpi/reptilesquiz.png
+#	new file:   res/drawable-hdpi/star_grey.png
+#	new file:   res/drawable-hdpi/star_yellow.png
+#	new file:   res/drawable-hdpi/timeup.jpg
+#	new file:   res/drawable-hdpi/welldone.jpg
+#	new file:   res/drawable-hdpi/wrong.png
+#	modified:   res/drawable/blue_button.xml
+#	modified:   res/drawable/module_layout0.xml
+#	new file:   res/drawable/option_button.xml
+#	modified:   res/layout/display_score_layout.xml
+#	modified:   res/layout/main_layout.xml
+#	modified:   res/layout/modules_layout.xml
+#	modified:   res/layout/question_layout.xml
+#	modified:   res/layout/timeout_layout.xml
+#	modified:   src/com/example/animalia/StartActivity.java
+#	modified:   src/com/example/animalia/quiz/DisplayScoreActivity.java
+#	modified:   src/com/example/animalia/quiz/QuestionActivity.java
+#	modified:   src/com/example/animalia/quiz/TimeoutActivity.java
+#
+

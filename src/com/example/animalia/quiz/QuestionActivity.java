@@ -14,6 +14,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,9 +67,30 @@ public class QuestionActivity extends Activity {
 		option3 = (Button) findViewById(R.id.option3);
 		option4 = (Button) findViewById(R.id.option4);
 
+		setTitle(module);
 		fillData();
 		countDownTimer = new MyCountDownTimer(startTime, interval);
 		countDownTimer.start();
+	}
+	
+	private void setTitle(String name) {
+		Log.d("caci", "Title: "+name);
+		ImageView imgName = (ImageView) findViewById(R.id.imageViewModuleName);
+		if (name.equals("Amphibians"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.amphibiansquiz));
+		else if (name.equals("Arthropods"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.arthropodsquiz));
+		else if (name.equals("Birds"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.birdsquiz));
+		else if (name.equals("Mammals"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.mammalsquiz));
+		else if (name.equals("Reptiles"))
+			imgName.setImageDrawable(getResources().getDrawable(
+					R.drawable.reptilesquiz));
 	}
 
 	private void parseJson() {
@@ -116,7 +138,7 @@ public class QuestionActivity extends Activity {
 
 	// TODO Check if it's necessary to pass questionNumber
 	private void fillData() {
-		textViewQuestion.setText(questionsArray.get(questionNumber)
+		textViewQuestion.setText("Question " + (questionNumber+1) + "/5: " + questionsArray.get(questionNumber)
 				.getQuestion());
 		ArrayList<String> opts = questionsArray.get(questionNumber)
 				.getAnswers();
@@ -147,6 +169,7 @@ public class QuestionActivity extends Activity {
 			intent.putExtra("guesses", guesses);
 			intent.putExtra("type", module);
 			intent.putExtra("timeleft", textViewTime.getText());
+			finish();
 			startActivity(intent);
 		}
 	}
@@ -159,6 +182,8 @@ public class QuestionActivity extends Activity {
 		@Override
 		public void onFinish() {
 			Intent intent = new Intent(QuestionActivity.this, TimeoutActivity.class);
+			intent.putExtra("module", module);
+			finish();
 			startActivity(intent);
 		}
 

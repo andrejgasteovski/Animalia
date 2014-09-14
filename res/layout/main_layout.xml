@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/jungle_frame"
+    android:background="@drawable/mainmenu"
     android:orientation="vertical" >
 
     <!-- TOP PART OF THE LAYOUT -->
@@ -11,18 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/aotd_layout"
         android:orientation="vertical"
         android:padding="20dp" >
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Animal of the day"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center" />
+        
 
         <ImageView
             android:id="@+id/image"
@@ -121,7 +115,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:onClick="onClickProfile"
-                android:src="@drawable/profile" />
+                android:src="@drawable/about" />
         </LinearLayout>
         <!-- END OF SECOND ROW -->
         <!-- FACEBOOK STUFF -->

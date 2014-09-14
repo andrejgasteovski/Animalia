@@ -145,7 +145,7 @@ public class ModuleDetails extends Activity {
 					R.drawable.amphibians));
 		else if (name.equals("Arthropods"))
 			imgName.setImageDrawable(getResources().getDrawable(
-					R.drawable.arthopods));
+					R.drawable.arthropods));
 		else if (name.equals("Birds"))
 			imgName.setImageDrawable(getResources().getDrawable(
 					R.drawable.birds));
