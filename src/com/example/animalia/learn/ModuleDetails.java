@@ -129,12 +129,12 @@ public class ModuleDetails extends Activity {
 		// get the elements from layout
 
 		TextView tvText = (TextView) findViewById(R.id.text);
-		ImageView imageView = (ImageView) findViewById(R.id.icon);
+		//ImageView imageView = (ImageView) findViewById(R.id.icon);
 
 		// set data
 		setTitle(name);
 		tvText.setText(text);
-		new ImageLoadTask(icon, imageView).execute(null, null);
+		//new ImageLoadTask(icon, imageView).execute(null, null);
 	}
 
 	private void setTitle(String name) {

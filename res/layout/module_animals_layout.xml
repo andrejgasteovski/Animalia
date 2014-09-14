@@ -14,19 +14,20 @@
 
         <!-- TITLE -->
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:contentDescription="Picture for the module" />
+            android:contentDescription="Picture for the module" />-->
 
         <ImageView
             android:id="@+id/module"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_marginLeft="30dp"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
             android:contentDescription="Title"
-            android:layout_marginTop="-20dp" />
+           />
 
         <!-- END TITLE -->
           <LinearLayout
