@@ -17,10 +17,12 @@
         android:padding="20dp" >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Animal of the day"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
 
         <ImageView
             android:id="@+id/image"
@@ -79,7 +81,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="Settings"
-                android:src="@drawable/settings" />
+                android:src="@drawable/profile" />
         </LinearLayout>
         <!-- END OF FIRST ROW -->
         <!-- SECOND ROW OF BUTTONS -->
@@ -106,13 +108,13 @@
                 android:layout_height="70dp"
                 android:contentDescription="See your achievements"
                 android:src="@drawable/achievements"/>-->
-
+		<!-- 
             <ImageView
                 android:id="@+id/btnSearch"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:onClick="onClickSearch"
-                android:src="@drawable/abc_ic_search_api_holo_light" />
+                android:src="@drawable/abc_ic_search_api_holo_light"/>-->
 
             <ImageView
                 android:id="@+id/btnProfile"
