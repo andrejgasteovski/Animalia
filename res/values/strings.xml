@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Animalia</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="app_id">698080816943879</string>
     <string name="total">TOTAL</string>
@@ -12,9 +11,11 @@
     <string name="arthropods">ARTHROPODS</string>
     <string name="birds">BIRDS</string>
     <string name="reptiles">REPTILES</string>
-    <string name="title_activity_display_score">DisplayScoreActivity</string>
-    <string name="title_activity_list_modules_quiz">ListModulesQuiz</string>
-    <string name="title_activity_question">QuestionActivity</string>
-    <string name="title_activity_timeout">TimeoutActivity</string>
+    <string name="title_activity_display_score">Display Score Activity</string>
+    <string name="title_activity_list_modules_quiz">List Modules Quiz</string>
+    <string name="title_activity_question">Question Activity</string>
+    <string name="title_activity_timeout">Timeout Activity</string>
+    <string name="title_activity_about">About</string>
+    <string name="about">Animalia is a free app for learning bla bla bla Animalia is a free app for learning bla bla blaAnimalia is a free app for learning bla bla blaAnimalia is a free app for learning bla bla blaAnimalia is a free app for learning bla bla bla</string>
 
 </resources>

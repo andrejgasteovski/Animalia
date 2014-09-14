@@ -129,6 +129,11 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void onClickAbout(View view) {
+		Intent intent=new Intent(this, About.class);
+		startActivity(intent);
+	}
+	
 	
 	
 	//event za klik na Learn more.. kaj Animal of the day

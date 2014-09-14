@@ -3,12 +3,12 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/bg_s"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context="com.example.animalia.quiz.QuestionActivity_" 
-    android:background="@drawable/bg_s">
+    tools:context="com.example.animalia.quiz.QuestionActivity_" >
 
     <ImageView
         android:id="@+id/imageViewModuleName"
@@ -17,19 +17,44 @@
         android:layout_marginTop="5dp"
         android:src="@drawable/mammalsquiz" />
 
-     <TextView
-         android:id="@+id/textViewTime"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="right"
-         android:text="Time remainging: 23"
-         android:textSize="30sp" />
-    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Time remainging: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="23"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewQuestionNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Question 1/5:"
+        android:textSize="25dp" />
+
     <TextView
         android:id="@+id/textViewQuestion"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:text="Question 1/5: Do you know?"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Do you know?"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
@@ -40,25 +65,25 @@
         <Button
             android:id="@+id/option1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:onClick="chooseAnswer"
+            android:layout_height="70dp"
             android:background="@drawable/option_button"
+            android:onClick="chooseAnswer"
             android:tag="1"
             android:text="Answer 1" />
 
         <Button
             android:id="@+id/option2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:onClick="chooseAnswer"
+            android:layout_height="70dp"
             android:background="@drawable/option_button"
+            android:onClick="chooseAnswer"
             android:tag="2"
             android:text="Answer 2" />
 
         <Button
             android:id="@+id/option3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:background="@drawable/option_button"
             android:onClick="chooseAnswer"
             android:tag="3"
@@ -67,13 +92,11 @@
         <Button
             android:id="@+id/option4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:background="@drawable/option_button"
             android:onClick="chooseAnswer"
             android:tag="4"
             android:text="Answer 4" />
     </LinearLayout>
-
-   
 
 </LinearLayout>

@@ -1,123 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollViewModuleDetails"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/jungle_background051" >
+    android:background="@drawable/jungle_background051"
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollViewModuleDetails"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical" >
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
 
-        <!-- TITLE -->
-
-        <!--<ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:contentDescription="Picture for the module" />-->
-
-        <ImageView
-            android:id="@+id/module"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            android:contentDescription="Title"
-           />
-
-        <!-- END TITLE -->
-          <LinearLayout
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="170dp"
-            android:background="@drawable/module_layout"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical" >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- TITLE -->
+
+            <ImageView
+                android:id="@+id/module"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:padding="5dp"
-                android:text="Spotlight animal:"
-                android:textColor="#006633"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <!-- START PART FOR NAME, PICTURE, TEXT -->
+                android:layout_marginTop="30dp"
+                android:contentDescription="Title" />
+
+            <!-- END TITLE -->
 
             <LinearLayout
                 android:layout_width="fill_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/module_layout"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:text="Spotlight animal:"
+                    android:textColor="#006633"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <!-- START PART FOR NAME, PICTURE, TEXT -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/spot_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp" />
+
+                    <ImageView
+                        android:id="@+id/spot_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:contentDescription="Photo of the spot animal" />
+
+                    <TextView
+                        android:id="@+id/spot_fact"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp" />
+                </LinearLayout>
+                <!-- END PART FOR NAME, PICTURE, TEXT -->
+
+            </LinearLayout>
+            <!-- END CENTRAL PART -->
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="0dp"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:padding="5dp" />
 
-                <TextView
-                    android:id="@+id/spot_name"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp" />
-
-                <ImageView
-                    android:id="@+id/spot_photo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:contentDescription="Photo of the spot animal" />
-
-                <TextView
-                    android:id="@+id/spot_fact"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp" />
-            </LinearLayout>
-            <!-- END PART FOR NAME, PICTURE, TEXT -->
+            <!-- CENTRAL PART FOR SPOTLIGHT ANIMAL -->
 
         </LinearLayout>
-        <!-- END CENTRAL PART -->
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="0dp"
-            android:padding="5dp"
-            android:gravity="center" />
-
-        <!-- CENTRAL PART FOR SPOTLIGHT ANIMAL -->
-
-      
-        <!-- START LIST WITH ANIMALS FROM THIS MODULE -->
-
-        <Button
-            android:id="@+id/buttonViewAnimals"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/blue_button"
-            android:onClick="onClickViewAnimals"
-            android:text="View animals in this module" />
-        <!--
-    <TextView
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/buttonViewAnimals"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="5dp"
-        android:text="Animals in this module:" />
+        android:layout_weight="0"
+        android:background="@drawable/blue_button"
+        android:onClick="onClickViewAnimals"
+        android:text="View animals in this module" />
 
-		
-    	<ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"/>
-        -->
-
-
-        <!-- END LIST WITH ANIMALS FROM THIS MODULE -->
-
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

@@ -86,8 +86,13 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.example.animalia.quiz.TimeoutActivity"
+            android:name=".quiz.TimeoutActivity"
             android:label="@string/title_activity_timeout"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
     </application>

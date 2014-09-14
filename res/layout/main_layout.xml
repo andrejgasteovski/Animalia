@@ -14,9 +14,7 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/aotd_layout"
         android:orientation="vertical"
-        android:padding="20dp" >
-
-        
+        android:padding="20dp" >        
 
         <ImageView
             android:id="@+id/image"
@@ -42,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="vertical" >
 
@@ -71,11 +69,12 @@
                 android:src="@drawable/test" />
 
             <ImageView
-                android:id="@+id/btnSettings"
+                android:id="@+id/btnProfile"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="Settings"
-                android:src="@drawable/profile" />
+                android:src="@drawable/profile"                 
+                android:onClick="onClickProfile"/>
         </LinearLayout>
         <!-- END OF FIRST ROW -->
         <!-- SECOND ROW OF BUTTONS -->
@@ -83,7 +82,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
             android:orientation="horizontal" >
 
@@ -111,10 +110,10 @@
                 android:src="@drawable/abc_ic_search_api_holo_light"/>-->
 
             <ImageView
-                android:id="@+id/btnProfile"
+                android:id="@+id/btnAbout"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:onClick="onClickProfile"
+                android:onClick="onClickAbout"
                 android:src="@drawable/about" />
         </LinearLayout>
         <!-- END OF SECOND ROW -->
@@ -125,6 +124,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="#000"
             android:text="Welcome!" >
         </TextView>
 
