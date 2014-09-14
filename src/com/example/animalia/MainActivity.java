@@ -135,7 +135,7 @@ public class MainActivity extends Activity {
 	public void onClickLearnMore(View view){
 		Intent i=new Intent(MainActivity.this, AnimalDetails.class);
 		i.putExtra("url", URL_BASE + animalOfTheDayLink);
-		i.putExtra("animals", ListAnimals.getAnimalsList());
+		i.putExtra("animals", ListAnimals.getAnimalsList(ListAnimals.URL_ANIMALS));
 		startActivity(i);
 	}
 	

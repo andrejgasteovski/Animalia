@@ -1,37 +1,33 @@
 package com.example.animalia.learn;
 
-import com.example.animalia.*;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.animalia.ImageLoadTask;
-import com.example.animalia.R;
-import com.example.animalia.R.id;
-import com.example.animalia.R.layout;
-import com.example.animalia.http_request.GetResponse;
-
 import android.app.ListActivity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.AdapterView;
+
+import com.example.animalia.AnimalShort;
+import com.example.animalia.ImageLoadTask;
+import com.example.animalia.ListAnimals;
+import com.example.animalia.MainActivity;
+import com.example.animalia.R;
+import com.example.animalia.http_request.GetResponse;
 
 public class ModuleDetails extends ListActivity {
 	// URL to get contacts JSON
-	private static String url;
+	private String urlModule;
 	public static String basicURL = "http://hcibiology.herokuapp.com";
 	// JSON Node names
 	private static final String TAG_NUMBER = "number";
@@ -64,8 +60,8 @@ public class ModuleDetails extends ListActivity {
 		animalsList = new ArrayList<AnimalShort>();
 
 		Intent intent = getIntent();
-		url = intent.getStringExtra("url");
-
+		urlModule = intent.getStringExtra("url");
+		
 		parseJson();
 		initializeList();
 	}
@@ -92,7 +88,7 @@ public class ModuleDetails extends ListActivity {
 	private void parseJson() {
 		String jsonStr = null;
 		try {
-			jsonStr = new GetResponse().execute(url).get();
+			jsonStr = new GetResponse().execute(urlModule).get();
 		} catch (InterruptedException e) {
 			Log.d("animalia", e.getMessage());
 		} catch (ExecutionException e) {
@@ -192,6 +188,13 @@ public class ModuleDetails extends ListActivity {
 			// adding animal to animal list
 			animalsList.add(animal);
 		}
+	}
+	
+	public void onClickViewAnimals(View view){
+		Intent intent=new Intent(this, ListAnimals.class);
+		intent.putExtra("url", urlModule + "/animals");
+		Log.d("animalia", "URL passed to ListAnimals: " + "/animals");
+		startActivity(intent);
 	}
 
 }

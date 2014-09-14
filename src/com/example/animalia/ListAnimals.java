@@ -32,7 +32,7 @@ public class ListAnimals extends ListActivity {
 	private ProgressDialog pDialog;
 	private ArrayAdapter<AnimalShort> adapter;
 	// URL to get animals JSON
-	private static String url = "http://hcibiology.herokuapp.com/animals";
+	public static String URL_ANIMALS = "http://hcibiology.herokuapp.com/animals";
 
 	// JSON Node names
 	private static final String TAG_ID = "id";
@@ -41,13 +41,17 @@ public class ListAnimals extends ListActivity {
 
 	// Hashmap for ListView
 	ArrayList<AnimalShort> animals;
+	
+	private String url;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.animals_layout);
 
-		animals = getAnimalsList();
+		url = getIntent().getStringExtra("url");
+		animals = getAnimalsList(url);
+		Log.d("animalia", "Animals: " + animals);
 		
 		ListView lv = getListView();
 		setListAdapter();
@@ -97,7 +101,8 @@ public class ListAnimals extends ListActivity {
 	
 	//isto so parseJson() ...
 	//napraena e static zatoa sto se koristi vo MainActivity
-	public static ArrayList<AnimalShort> getAnimalsList() {
+	public static ArrayList<AnimalShort> getAnimalsList(String url) {
+		Log.d("animalia", "URL for JSON: " + url);
 		ArrayList<AnimalShort> animalsList = new ArrayList<AnimalShort>();
 		JSONArray animals = null;
 		String jsonStr = null;

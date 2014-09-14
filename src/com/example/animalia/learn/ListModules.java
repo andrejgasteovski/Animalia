@@ -174,6 +174,7 @@ public class ListModules extends Activity {
 	
 	public void allClicked(View view){
 		Intent intent=new Intent(this, ListAnimals.class);
+		intent.putExtra("url", ListAnimals.URL_ANIMALS);
 		startActivity(intent);
 	
 	}
