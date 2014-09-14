@@ -10,7 +10,7 @@
     <!-- Name Label -->
  
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/namee"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
