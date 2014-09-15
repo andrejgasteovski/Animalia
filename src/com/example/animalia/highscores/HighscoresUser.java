@@ -43,7 +43,7 @@ public class HighscoresUser {
 	
 	@Override
 	public String toString() {
-		return place + ". " + user;
+		return place + ". " + user + " - " + score;
 	}
 	
 }

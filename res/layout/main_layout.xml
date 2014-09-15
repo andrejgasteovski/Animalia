@@ -54,27 +54,19 @@
 
             <ImageView
                 android:id="@+id/btnLearn"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
                 android:contentDescription="Learn about animals"
                 android:onClick="onClickLearn"
                 android:src="@drawable/btn_learn" />
 
             <ImageView
                 android:id="@+id/btnQuiz"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
                 android:contentDescription="Take a quiz"
                 android:onClick="onClickQuiz"
                 android:src="@drawable/btn_test" />
-
-            <ImageView
-                android:id="@+id/btnProfile"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:contentDescription="Settings"
-                android:src="@drawable/btn_profile"                 
-                android:onClick="onClickProfile"/>
         </LinearLayout>
         <!-- END OF FIRST ROW -->
         <!-- SECOND ROW OF BUTTONS -->
@@ -85,6 +77,14 @@
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:orientation="horizontal" >
+            
+            <ImageView
+                android:id="@+id/btnProfile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:contentDescription="Settings"
+                android:src="@drawable/btn_profile"                 
+                android:onClick="onClickProfile"/>
 
             <ImageView
                 android:id="@+id/btnHighScores"
@@ -133,10 +133,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/green_button"
-            android:onClick="loginFacebook"
-            android:text="Login using Facebook" 
+            android:onClick="loginFacebook"  
             android:textColor="#FFFFFF"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:text="Login with facebook"/>
 
         <!-- END OF FACEBOOK STUFF -->
 
