@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -160,7 +161,7 @@ public class QuestionActivity extends Activity {
 	public void chooseAnswer(View view) {
 		int selectedOptionNumber = Integer.parseInt(view.getTag().toString());
 		Question current = questionsArray.get(questionNumber);
-		Toast toast;
+		final Toast toast;
 		LayoutInflater inflater = getLayoutInflater();
 		View toast_image;
 
@@ -182,19 +183,27 @@ public class QuestionActivity extends Activity {
 		toast.setView(toast_image);
 		toast.show();
 
-		//TODO make the time stop 
-		if (questionNumber < 4) {
-			questionNumber++;
-			fillData();
-		} else {
-			countDownTimer.cancel();
+		Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				toast.cancel();
+				if (questionNumber < 4) {
+					questionNumber++;
+					fillData();
+				} else {
+					countDownTimer.cancel();
 
-			intent.putExtra("guesses", guesses);
-			intent.putExtra("type", module);
-			intent.putExtra("timeleft", textViewTime.getText());
-			finish();
-			startActivity(intent);
-		}
+					intent.putExtra("guesses", guesses);
+					intent.putExtra("type", module);
+					intent.putExtra("timeleft", textViewTime.getText());
+					finish();
+					startActivity(intent);
+				}
+			}
+		}, 500);
+
+		// TODO make the time stop
 
 	}
 
