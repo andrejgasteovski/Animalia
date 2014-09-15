@@ -12,7 +12,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,6 +51,7 @@ public class QuestionActivity extends Activity {
 	Button option2;
 	Button option3;
 	Button option4;
+	Intent intent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +77,11 @@ public class QuestionActivity extends Activity {
 		fillData();
 		countDownTimer = new MyCountDownTimer(startTime, interval);
 		countDownTimer.start();
+		intent = new Intent(this, DisplayScoreActivity.class);
 	}
-	
+
 	private void setTitle(String name) {
-		Log.d("caci", "Title: "+name);
+		Log.d("caci", "Title: " + name);
 		ImageView imgName = (ImageView) findViewById(R.id.imageViewModuleName);
 		if (name.equals("Amphibians"))
 			imgName.setImageDrawable(getResources().getDrawable(
@@ -140,7 +145,8 @@ public class QuestionActivity extends Activity {
 
 	// TODO Check if it's necessary to pass questionNumber
 	private void fillData() {
-		textViewQuestionNumber.setText("Question " + (questionNumber+1) + "/5: ");
+		textViewQuestionNumber.setText("Question " + (questionNumber + 1)
+				+ "/5: ");
 		textViewQuestion.setText(questionsArray.get(questionNumber)
 				.getQuestion());
 		ArrayList<String> opts = questionsArray.get(questionNumber)
@@ -154,27 +160,52 @@ public class QuestionActivity extends Activity {
 	public void chooseAnswer(View view) {
 		int selectedOptionNumber = Integer.parseInt(view.getTag().toString());
 		Question current = questionsArray.get(questionNumber);
-		if (current.getAnswer() == selectedOptionNumber) {
-			Toast.makeText(QuestionActivity.this, "RIGHT", Toast.LENGTH_SHORT)
-					.show();
-			guesses++;
-		} else
-			Toast.makeText(QuestionActivity.this, "WRONG", Toast.LENGTH_SHORT)
-					.show();
+		Toast toast;
+		LayoutInflater inflater = getLayoutInflater();
+		View toast_image;
 
-		if (questionNumber < 4) {
-			questionNumber++;
-			Log.e("questionNo", questionNumber + "");
-			fillData();
+		if (current.getAnswer() == selectedOptionNumber) {
+			toast = Toast.makeText(QuestionActivity.this, "RIGHT",
+					Toast.LENGTH_SHORT);
+
+			toast_image = inflater.inflate(R.layout.toast_right,
+					(ViewGroup) findViewById(R.id.toast_right));
+			guesses++;
 		} else {
-			countDownTimer.cancel();
-			Intent intent = new Intent(this, DisplayScoreActivity.class);
-			intent.putExtra("guesses", guesses);
-			intent.putExtra("type", module);
-			intent.putExtra("timeleft", textViewTime.getText());
-			finish();
-			startActivity(intent);
+			toast = Toast.makeText(QuestionActivity.this, "WRONG",
+					Toast.LENGTH_SHORT);
+			toast_image = inflater.inflate(R.layout.toast_wrong,
+					(ViewGroup) findViewById(R.id.toast_wrong));
+
 		}
+		toast.setGravity(Gravity.CENTER, 0, 0);
+		toast.setView(toast_image);
+		toast.show();
+
+		Thread thread = new Thread() {
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(2000);
+					if (questionNumber < 4) {
+						questionNumber++;
+						Log.e("questionNo", questionNumber + "");
+						fillData();
+					} else {
+						countDownTimer.cancel();
+						
+						intent.putExtra("guesses", guesses);
+						intent.putExtra("type", module);
+						intent.putExtra("timeleft", textViewTime.getText());
+						finish();
+						startActivity(intent);
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		};
+		
 	}
 
 	public class MyCountDownTimer extends CountDownTimer {
@@ -184,7 +215,8 @@ public class QuestionActivity extends Activity {
 
 		@Override
 		public void onFinish() {
-			Intent intent = new Intent(QuestionActivity.this, TimeoutActivity.class);
+			Intent intent = new Intent(QuestionActivity.this,
+					TimeoutActivity.class);
 			intent.putExtra("module", module);
 			finish();
 			startActivity(intent);
