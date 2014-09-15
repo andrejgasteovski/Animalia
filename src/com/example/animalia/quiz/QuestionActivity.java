@@ -59,7 +59,7 @@ public class QuestionActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.question_layout);
 		questionsArray = new ArrayList<Question>();
-		Intent intent = getIntent();
+		intent = getIntent();
 		module = intent.getStringExtra("module");
 		url = basicURL + module;
 		parseJson();
@@ -193,7 +193,6 @@ public class QuestionActivity extends Activity {
 					fillData();
 				} else {
 					countDownTimer.cancel();
-
 					intent.putExtra("guesses", guesses);
 					intent.putExtra("type", module);
 					intent.putExtra("timeleft", textViewTime.getText());
@@ -202,8 +201,6 @@ public class QuestionActivity extends Activity {
 				}
 			}
 		}, 500);
-
-		// TODO make the time stop
 
 	}
 
