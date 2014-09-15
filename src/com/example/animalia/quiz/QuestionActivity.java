@@ -182,30 +182,20 @@ public class QuestionActivity extends Activity {
 		toast.setView(toast_image);
 		toast.show();
 
-		Thread thread = new Thread() {
-			@Override
-			public void run() {
-				try {
-					Thread.sleep(2000);
-					if (questionNumber < 4) {
-						questionNumber++;
-						Log.e("questionNo", questionNumber + "");
-						fillData();
-					} else {
-						countDownTimer.cancel();
-						
-						intent.putExtra("guesses", guesses);
-						intent.putExtra("type", module);
-						intent.putExtra("timeleft", textViewTime.getText());
-						finish();
-						startActivity(intent);
-					}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		};
-		
+		//TODO make the time stop 
+		if (questionNumber < 4) {
+			questionNumber++;
+			fillData();
+		} else {
+			countDownTimer.cancel();
+
+			intent.putExtra("guesses", guesses);
+			intent.putExtra("type", module);
+			intent.putExtra("timeleft", textViewTime.getText());
+			finish();
+			startActivity(intent);
+		}
+
 	}
 
 	public class MyCountDownTimer extends CountDownTimer {
