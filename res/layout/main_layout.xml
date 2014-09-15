@@ -13,19 +13,31 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/aotd_layout"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp" >        
+        android:padding="20dp" >
+
+        <TextView
+            android:id="@+id/imageText"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content" 
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="#53933f"/>
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:src="@drawable/allkinds"
+            android:layout_height="150dp"
+            
             android:contentDescription="Animal of the day" >
         </ImageView>
 
         <Button
             android:id="@+id/buttonLearnMore"
-            android:layout_width="match_parent"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:background="@drawable/green_button"
             android:onClick="onClickLearnMore"
@@ -58,7 +70,9 @@
                 android:layout_height="105dp"
                 android:contentDescription="Learn about animals"
                 android:onClick="onClickLearn"
-                android:src="@drawable/btn_learn" />
+                android:src="@drawable/btn_learn"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp" />
 
             <ImageView
                 android:id="@+id/btnQuiz"
@@ -66,7 +80,8 @@
                 android:layout_height="105dp"
                 android:contentDescription="Take a quiz"
                 android:onClick="onClickQuiz"
-                android:src="@drawable/btn_test" />
+                android:src="@drawable/btn_test"
+                android:paddingBottom="5dp"  />
         </LinearLayout>
         <!-- END OF FIRST ROW -->
         <!-- SECOND ROW OF BUTTONS -->
@@ -74,17 +89,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:orientation="horizontal" >
-            
+
             <ImageView
                 android:id="@+id/btnProfile"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="Settings"
-                android:src="@drawable/btn_profile"                 
-                android:onClick="onClickProfile"/>
+                android:onClick="onClickProfile"
+                android:src="@drawable/btn_profile" 
+                android:paddingRight="5dp"/>
 
             <ImageView
                 android:id="@+id/btnHighScores"
@@ -92,22 +108,10 @@
                 android:layout_height="70dp"
                 android:contentDescription="See high scores"
                 android:onClick="onClickHighscores"
-                android:src="@drawable/btn_highscores" />
+                android:src="@drawable/btn_highscores"
+                android:paddingRight="5dp" />
 
-            <!--
-                 <ImageView
-                android:id="@+id/btnAchievements"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:contentDescription="See your achievements"
-                android:src="@drawable/achievements"/>-->
-		<!-- 
-            <ImageView
-                android:id="@+id/btnSearch"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:onClick="onClickSearch"
-                android:src="@drawable/abc_ic_search_api_holo_light"/>-->
+           
 
             <ImageView
                 android:id="@+id/btnAbout"
@@ -124,19 +128,22 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="#000"
-            android:text="Welcome!" >
+            android:layout_gravity="center"
+            android:text="Welcome!"
+            android:textColor="#3B5998"
+            android:textSize="20sp"
+            android:textStyle="bold" >
         </TextView>
 
         <Button
             android:id="@+id/buttonLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/green_button"
-            android:onClick="loginFacebook"  
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/login_enabled"
+            android:onClick="loginFacebook"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:text="Login with facebook"/>
+            android:textStyle="bold" />
 
         <!-- END OF FACEBOOK STUFF -->
 

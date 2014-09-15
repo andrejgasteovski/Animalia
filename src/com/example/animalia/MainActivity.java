@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,164 +47,183 @@ public class MainActivity extends Activity {
 	private JSONObject animalOfTheDay;
 	private String animalOfTheDayLink;
 
-	//user data
+	// user data
 	private String username;
 	private String name;
 	private int points;
-	
+
 	Button btnLogin;
 	TextView tvLoginStatus;
-	
-	
+	TextView tvAnimalName;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
-		
 		try {
 			parseJson();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		initializeAllShit();
 		checkLoginStatus();
 	}
-	
-	private void initializeAllShit(){
+
+	private void initializeAllShit() {
 		Log.d("animalia", "Initialize all shit is called");
-		
+
 		Intent intent = getIntent();
 		username = intent.getStringExtra(StartActivity.USERNAME);
 		name = intent.getStringExtra(StartActivity.NAME);
 		points = intent.getIntExtra(StartActivity.POINTS, 0);
-		
+
 		btnLogin = (Button) findViewById(R.id.buttonLogin);
+
 		tvLoginStatus = (TextView) findViewById(R.id.textViewLoginStatus);
-		
-		Log.d("animalia", "All the shit is initialized.. Values --- Username: " + username + " -- Name: + " + name + " -- Points: " + points);
+		Log.d("animalia", "All the shit is initialized.. Values --- Username: "
+				+ username + " -- Name: + " + name + " -- Points: " + points);
 	}
 
-	private void checkLoginStatus(){
+	private void checkLoginStatus() {
 		Log.d("animalia", "checkLoginStatus is called");
-		
-		if(name.equals("")){
+
+		if (name.equals("")) {
 			Log.d("animalia", "Name is empty -> user is not logged");
 			btnLogin.setEnabled(true);
+			btnLogin.setBackground(getResources().getDrawable(
+					R.drawable.login_enabled));
 			tvLoginStatus.setText("User not logged");
-		}else {
+		} else {
 			Log.d("animalia", "Name is not empty -> user is logged");
 			btnLogin.setEnabled(false);
+			btnLogin.setBackground(getResources().getDrawable(
+					R.drawable.login_disabled));
+			//btnLogin.setDrawable(getResources().getDrawable(
+			//		R.drawable.login_disabled));
 			tvLoginStatus.setText("Logged as " + name);
 		}
 	}
-	
-
 
 	public void onClickLearn(View view) {
-		Intent intent=new Intent(this, ListModules.class);
+		Intent intent = new Intent(this, ListModules.class);
 		startActivity(intent);
 	}
+
 	public void onClickProfile(View view) {
-		Intent intent=new Intent(this, Profile.class);
+		Intent intent = new Intent(this, Profile.class);
 		intent.putExtra("name", name);
 		intent.putExtra("username", username);
 		startActivity(intent);
 	}
-	
-	public void onClickHighscores(View view){
+
+	public void onClickHighscores(View view) {
 		Intent intent = new Intent(this, HighscoresActivity.class);
 		startActivity(intent);
 	}
-	
+
 	public void onClickQuiz(View view) {
 		// Intent intent=new Intent(this, ListAnimals.class);
 		Intent intent = new Intent(this, ListModulesQuiz.class);
 		startActivity(intent);
 	}
-	
-	//Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na zivotni
+
+	// Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na
+	// zivotni
 	public void onClickSearch(View view) {
-		Intent intent=new Intent(this, ListAnimals.class);
+		Intent intent = new Intent(this, ListAnimals.class);
 		startActivity(intent);
 	}
-	
+
 	public void onClickAbout(View view) {
-		Intent intent=new Intent(this, About.class);
+		Intent intent = new Intent(this, About.class);
 		startActivity(intent);
 	}
-	
-	
-	
-	//event za klik na Learn more.. kaj Animal of the day
-	public void onClickLearnMore(View view){
-		Intent i=new Intent(MainActivity.this, AnimalDetails.class);
+
+	// event za klik na Learn more.. kaj Animal of the day
+	public void onClickLearnMore(View view) {
+		Intent i = new Intent(MainActivity.this, AnimalDetails.class);
 		i.putExtra("url", URL_BASE + animalOfTheDayLink);
-		i.putExtra("animals", ListAnimals.getAnimalsList(ListAnimals.URL_ANIMALS));
+		i.putExtra("animals",
+				ListAnimals.getAnimalsList(ListAnimals.URL_ANIMALS));
 		startActivity(i);
 	}
-	
-	//ova se koristi za logiranjeto preku FB
+
+	// ova se koristi za logiranjeto preku FB
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-	  super.onActivityResult(requestCode, resultCode, data);
-	  Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+		super.onActivityResult(requestCode, resultCode, data);
+		Session.getActiveSession().onActivityResult(this, requestCode,
+				resultCode, data);
 	}
-	
-	//logiranje preku FB
-	public void loginFacebook(View view){
+
+	// logiranje preku FB
+	public void loginFacebook(View view) {
 		Session.openActiveSession(this, true, new Session.StatusCallback() {
 			@Override
-			public void call(Session session, SessionState state, Exception exception) {
-				if(session.isOpened()){
-					Request.newMeRequest(session, new Request.GraphUserCallback() {	
-						@Override
-						public void onCompleted(GraphUser user, Response response) {
-							//tvLoginStatus.setText("Hello " + user.getName() +  "!");
-							name = user.getName();
-							AccountDataSource dao = new AccountDataSource(getApplicationContext());
-							dao.open();
-							dao.updateName(name);
-							checkLoginStatus();
-							Log.d("animalia", "Button and TextView changed");
-							
-							String firstName = user.getFirstName();
-							String lastName = user.getLastName();
-							String email = user.getUsername();
-							updateUserInServerDatabase(firstName, lastName, email);
-						}
-					}).executeAsync();
+			public void call(Session session, SessionState state,
+					Exception exception) {
+				if (session.isOpened()) {
+					Request.newMeRequest(session,
+							new Request.GraphUserCallback() {
+								@Override
+								public void onCompleted(GraphUser user,
+										Response response) {
+									// tvLoginStatus.setText("Hello " +
+									// user.getName() + "!");
+									name = user.getName();
+									AccountDataSource dao = new AccountDataSource(
+											getApplicationContext());
+									dao.open();
+									dao.updateName(name);
+									checkLoginStatus();
+									Log.d("animalia",
+											"Button and TextView changed");
+
+									String firstName = user.getFirstName();
+									String lastName = user.getLastName();
+									String email = user.getUsername();
+									updateUserInServerDatabase(firstName,
+											lastName, email);
+								}
+							}).executeAsync();
 				}
 			}
-		});	
+		});
 	}
-	
-	private void updateUserInServerDatabase(String firstName, String lastName, String emial){
-		String url = "http://hcibiology.herokuapp.com/accounts/update?username=" + username + "&name=" + firstName + "&surname=" + lastName + "&email=" + emial;
-		
+
+	private void updateUserInServerDatabase(String firstName, String lastName,
+			String emial) {
+		String url = "http://hcibiology.herokuapp.com/accounts/update?username="
+				+ username
+				+ "&name="
+				+ firstName
+				+ "&surname="
+				+ lastName
+				+ "&email=" + emial;
+
 		String jsonStr = null;
 		try {
 			jsonStr = new GetResponse().execute(url).get();
 		} catch (Exception e) {
 			Log.d("animalia", e.getMessage());
 		}
-		
+
 		Log.d("animalia", "user updated");
 	}
-	
-	//koga ke se klikne na kopceto Back na tel. da se zatvori aplikacijata
+
+	// koga ke se klikne na kopceto Back na tel. da se zatvori aplikacijata
 	@Override
 	public void onBackPressed() {
 		Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//***Change Here***
-        startActivity(intent);
-        finish();
-        System.exit(0);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);// ***Change Here***
+		startActivity(intent);
+		finish();
+		System.exit(0);
 		super.onBackPressed();
 	}
-	
+
 	private void parseJson() throws IOException {
 		String jsonStr = null;
 		try {
@@ -234,9 +254,11 @@ public class MainActivity extends Activity {
 
 				ImageView imageView = (ImageView) findViewById(R.id.image);
 				new ImageLoadTask(photo, imageView).execute(null, null);
-					
-				//used in onClickLearnMore method
+				tvAnimalName = (TextView) findViewById(R.id.imageText);
+				tvAnimalName.setText(name);
+				// used in onClickLearnMore method
 				animalOfTheDayLink = link;
+				
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
