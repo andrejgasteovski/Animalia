@@ -20,14 +20,16 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right" >
+        android:layout_gravity="right" 
+        android:background="@drawable/module_layout3">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Time remainging: "
-            android:textSize="20sp" />
+            android:textColor="#fff"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textViewTime"
@@ -35,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="23"
-            android:textSize="30sp" />
+            android:textColor="#fff"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <TextView
@@ -44,8 +47,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
         android:text="Question 1/5:"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textViewQuestion"
@@ -69,7 +73,8 @@
             android:background="@drawable/option_button"
             android:onClick="chooseAnswer"
             android:tag="1"
-            android:text="Answer 1" />
+            android:text="Answer 1"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/option2"
@@ -78,7 +83,8 @@
             android:background="@drawable/option_button"
             android:onClick="chooseAnswer"
             android:tag="2"
-            android:text="Answer 2" />
+            android:text="Answer 2"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/option3"
@@ -87,7 +93,8 @@
             android:background="@drawable/option_button"
             android:onClick="chooseAnswer"
             android:tag="3"
-            android:text="Answer 3" />
+            android:text="Answer 3"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/option4"
@@ -96,7 +103,8 @@
             android:background="@drawable/option_button"
             android:onClick="chooseAnswer"
             android:tag="4"
-            android:text="Answer 4" />
+            android:text="Answer 4"
+            android:textColor="#fff" />
     </LinearLayout>
 
 </LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/bg_light"
+    android:background="@drawable/frame"
     android:orientation="vertical" >
 
     <ScrollView
@@ -24,6 +24,7 @@
                 android:id="@+id/imageViewAnimalDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/learnabout" />
 
@@ -31,15 +32,16 @@
                 android:id="@+id/textViewName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
                 android:textSize="28sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:text="Python" />
 
             <ImageView
                 android:id="@+id/imageViewAnimalPhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="Photo" />
+                android:contentDescription="Photo"
+                android:src="@drawable/allkinds" />
             <!-- AREA -->
 
             <LinearLayout

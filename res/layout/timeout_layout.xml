@@ -20,7 +20,8 @@
         android:background="@drawable/blue_button"
         android:onClick="openNewQuiz"
         android:text="Try again" 
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/btnMainMenu"
@@ -30,6 +31,7 @@
         android:background="@drawable/blue_button"
         android:onClick="goToMainMenu"
         android:text="Go to main menu" 
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:textStyle="bold"/>
 
 </LinearLayout>

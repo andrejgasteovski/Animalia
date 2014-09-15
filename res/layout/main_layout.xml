@@ -58,7 +58,7 @@
                 android:layout_height="70dp"
                 android:contentDescription="Learn about animals"
                 android:onClick="onClickLearn"
-                android:src="@drawable/learn" />
+                android:src="@drawable/btn_learn" />
 
             <ImageView
                 android:id="@+id/btnQuiz"
@@ -66,14 +66,14 @@
                 android:layout_height="70dp"
                 android:contentDescription="Take a quiz"
                 android:onClick="onClickQuiz"
-                android:src="@drawable/test" />
+                android:src="@drawable/btn_test" />
 
             <ImageView
                 android:id="@+id/btnProfile"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:contentDescription="Settings"
-                android:src="@drawable/profile"                 
+                android:src="@drawable/btn_profile"                 
                 android:onClick="onClickProfile"/>
         </LinearLayout>
         <!-- END OF FIRST ROW -->
@@ -92,7 +92,7 @@
                 android:layout_height="70dp"
                 android:contentDescription="See high scores"
                 android:onClick="onClickHighscores"
-                android:src="@drawable/highscores" />
+                android:src="@drawable/btn_highscores" />
 
             <!--
                  <ImageView
@@ -114,7 +114,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:onClick="onClickAbout"
-                android:src="@drawable/about" />
+                android:src="@drawable/btn_about" />
         </LinearLayout>
         <!-- END OF SECOND ROW -->
         <!-- FACEBOOK STUFF -->
