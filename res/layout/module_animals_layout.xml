@@ -3,99 +3,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/frame"
+    android:background="@drawable/bg_s"
     android:orientation="vertical" >
 
-    <ScrollView
-        android:id="@+id/scrollViewModuleDetails"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1" >
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <!-- TITLE -->
+
+        <ImageView
+            android:id="@+id/module"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:contentDescription="Title"
+            android:src="@drawable/amphibians" />
+        <!-- END TITLE -->
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:background="@drawable/textbox_green"
             android:gravity="center"
             android:orientation="vertical" >
 
-            <!-- TITLE -->
-
-            <ImageView
-                android:id="@+id/module"
-                android:layout_width="220dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:contentDescription="Title" />
-
-            <!-- END TITLE -->
+                android:text="Spotlight animal:"
+                android:textColor="#006633"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <!-- START PART FOR NAME, PICTURE, TEXT -->
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="170dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginRight="55dp"
-                android:background="@drawable/module_layout"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="5dp"
-                    android:text="Spotlight animal:"
-                    android:textColor="#006633"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-                <!-- START PART FOR NAME, PICTURE, TEXT -->
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:id="@+id/spot_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/blue_button"
                     android:gravity="center"
-                    android:orientation="vertical" >
+                    android:text="Blue poison frog"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/spot_name"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#FFFFFF" />
+                <ImageView
+                    android:id="@+id/spot_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:contentDescription="Photo of the spot animal"
+                    android:src="@drawable/allkinds" />
 
-                    <ImageView
-                        android:id="@+id/spot_photo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="100dp"
-                        android:contentDescription="Photo of the spot animal" />
-
-                    <TextView
-                        android:id="@+id/spot_fact"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp" />
-                </LinearLayout>
-                <!-- END PART FOR NAME, PICTURE, TEXT -->
-
+                <TextView
+                    android:id="@+id/spot_fact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Fun fact" />
             </LinearLayout>
-            <!-- END CENTRAL PART -->
+
+            <!-- END PART FOR NAME, PICTURE, TEXT -->
+
+        </LinearLayout>
+        <!-- END CENTRAL PART -->
+
+        <ScrollView
+            android:id="@+id/scrollViewModuleDetails"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
 
             <TextView
                 android:id="@+id/text"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/textbox_blue_dark"
                 android:gravity="center"
-                android:padding="5dp" />
+                android:padding="5dp"
+                android:text="Lorem ipsum dolor sit amet, essent minimum perpetua pro ad, ne mel augue rationibus philosophia. Cu sed omnis viderer deserunt, cu commodo blandit mea. Facilisi intellegat ad mea, ullum quando consulatu cum eu, affert dolores eleifend cum ei. Eam ex amet unum offendit. Vim nulla tempor id. Mei laoreet pericula eu"
+                android:textColor="#000"
+                android:textSize="18sp" />
 
             <!-- CENTRAL PART FOR SPOTLIGHT ANIMAL -->
-
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonViewAnimals"
@@ -104,10 +118,11 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_weight="0"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:background="@drawable/green_button"
         android:onClick="onClickViewAnimals"
-        android:text="View animals in this module" />
+        android:text="Animals"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

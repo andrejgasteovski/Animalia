@@ -99,7 +99,6 @@ public class Profile extends Activity {
 	}
 	private void setContent(){
 		TextView txtName = (TextView) findViewById(R.id.name);
-		TextView txtEmail = (TextView) findViewById(R.id.email);
 		TextView txtHighscore = (TextView) findViewById(R.id.highscore);
 		
 		TextView txtRanking1 = (TextView) findViewById(R.id.ranking1);
@@ -111,7 +110,6 @@ public class Profile extends Activity {
 		TextView txtRanking7 = (TextView) findViewById(R.id.ranking7);
 		
 		txtName.setText(name);
-		txtEmail.setText(email);
 		txtHighscore.setText(highscore);
 		
 		txtRanking1.setText(module1);

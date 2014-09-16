@@ -24,7 +24,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1" 
             android:layout_marginLeft="25dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp">
 
             <ImageView
                 android:id="@+id/imageViewStar1"

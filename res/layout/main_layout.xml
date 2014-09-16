@@ -138,9 +138,9 @@
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="220dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/login_enabled"
+            android:background="@drawable/fb_button"
             android:onClick="loginFacebook"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
