@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,6 +72,12 @@ public class AnimalDetails extends Activity {
 		setFont();
 	}
 
+	public void buttonBeep()
+	{
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+		mp.start();	
+	}	
+	
 	private void initializePreviousAndNextAnimals() {
 		for (AnimalShort animal : animalsList) {
 			if (animal.getId().equals(this.animalId)) {
@@ -89,6 +96,7 @@ public class AnimalDetails extends Activity {
 	}
 
 	public void buttonOnClick(View view) {
+		buttonBeep();
 		String urlToOpen = ModuleDetails.basicURL;
 
 		if (view.getId() == R.id.buttonNextAnimal) {

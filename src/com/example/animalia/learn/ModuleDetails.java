@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,29 +63,28 @@ public class ModuleDetails extends Activity {
 
 		Intent intent = getIntent();
 		urlModule = intent.getStringExtra("url");
-		
-		parseJson();
-		//initializeList();
-	}
-/*
-	private void initializeList() {
-		getListView().setClickable(true);
-		getListView().setOnItemClickListener(
-				new AdapterView.OnItemClickListener() {
 
-					@Override
-					public void onItemClick(AdapterView<?> parent, View view,
-							int position, long id) {
-						AnimalShort animal = (AnimalShort) getListView()
-								.getItemAtPosition(position);
-						Intent i = new Intent(ModuleDetails.this,
-								AnimalDetails.class);
-						i.putExtra("url", basicURL + animal.getLink());
-						i.putExtra("animals", animalsList);
-						startActivity(i);
-					}
-				});
-	}*/
+		parseJson();
+		// initializeList();
+	}
+
+	public void buttonBeep() {
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(),
+				R.raw.button);
+		mp.start();
+	}
+
+	/*
+	 * private void initializeList() { getListView().setClickable(true);
+	 * getListView().setOnItemClickListener( new
+	 * AdapterView.OnItemClickListener() {
+	 * 
+	 * @Override public void onItemClick(AdapterView<?> parent, View view, int
+	 * position, long id) { AnimalShort animal = (AnimalShort) getListView()
+	 * .getItemAtPosition(position); Intent i = new Intent(ModuleDetails.this,
+	 * AnimalDetails.class); i.putExtra("url", basicURL + animal.getLink());
+	 * i.putExtra("animals", animalsList); startActivity(i); } }); }
+	 */
 
 	private void parseJson() {
 		String jsonStr = null;
@@ -112,12 +112,12 @@ public class ModuleDetails extends Activity {
 		} else {
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
-/*
-		int layout = android.R.layout.simple_list_item_1;
-		ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(
-				ModuleDetails.this, layout, animalsList);
-		adapter.notifyDataSetChanged();
-		setListAdapter(adapter);*/
+		/*
+		 * int layout = android.R.layout.simple_list_item_1;
+		 * ArrayAdapter<AnimalShort> adapter = new ArrayAdapter<AnimalShort>(
+		 * ModuleDetails.this, layout, animalsList);
+		 * adapter.notifyDataSetChanged(); setListAdapter(adapter);
+		 */
 	}
 
 	private void setModuleInfo(JSONObject module) throws JSONException {
@@ -129,16 +129,16 @@ public class ModuleDetails extends Activity {
 		// get the elements from layout
 
 		TextView tvText = (TextView) findViewById(R.id.text);
-		//ImageView imageView = (ImageView) findViewById(R.id.icon);
+		// ImageView imageView = (ImageView) findViewById(R.id.icon);
 
 		// set data
 		setTitle(name);
 		tvText.setText(text);
-		//new ImageLoadTask(icon, imageView).execute(null, null);
+		// new ImageLoadTask(icon, imageView).execute(null, null);
 	}
 
 	private void setTitle(String name) {
-		Log.d("caci", "Title: "+name);
+		Log.d("caci", "Title: " + name);
 		ImageView imgName = (ImageView) findViewById(R.id.module);
 		if (name.equals("Amphibians"))
 			imgName.setImageDrawable(getResources().getDrawable(
@@ -190,12 +190,18 @@ public class ModuleDetails extends Activity {
 			animalsList.add(animal);
 		}
 	}
-	
-	public void onClickViewAnimals(View view){
-		Intent intent=new Intent(this, ListAnimals.class);
+
+	public void onClickViewAnimals(View view) {
+		buttonBeep();
+		Intent intent = new Intent(this, ListAnimals.class);
 		intent.putExtra("url", urlModule + "/animals");
 		Log.d("animalia", "URL passed to ListAnimals: " + "/animals");
 		startActivity(intent);
+	}
+	
+	public void onClickSpotlightAnimal(View view) 
+	{
+		buttonBeep();
 	}
 
 }

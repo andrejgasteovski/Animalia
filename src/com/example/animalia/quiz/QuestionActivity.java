@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -166,6 +167,8 @@ public class QuestionActivity extends Activity {
 		View toast_image;
 
 		if (current.getAnswer() == selectedOptionNumber) {
+			MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.correct);
+			mp.start();
 			toast = Toast.makeText(QuestionActivity.this, "RIGHT",
 					Toast.LENGTH_SHORT);
 
@@ -173,6 +176,8 @@ public class QuestionActivity extends Activity {
 					(ViewGroup) findViewById(R.id.toast_right));
 			guesses++;
 		} else {
+			MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.error);
+			mp.start();
 			toast = Toast.makeText(QuestionActivity.this, "WRONG",
 					Toast.LENGTH_SHORT);
 			toast_image = inflater.inflate(R.layout.toast_wrong,

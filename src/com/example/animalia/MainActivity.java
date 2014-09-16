@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,6 +61,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);
+		
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.jungle);
+		mp.start();
+		
 		try {
 			parseJson();
 		} catch (IOException e) {
@@ -69,6 +74,12 @@ public class MainActivity extends Activity {
 		initializeAllShit();
 		checkLoginStatus();
 	}
+	
+	public void buttonBeep()
+	{
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+		mp.start();	
+	}	
 
 	private void initializeAllShit() {
 		Log.d("animalia", "Initialize all shit is called");
@@ -106,11 +117,13 @@ public class MainActivity extends Activity {
 	}
 
 	public void onClickLearn(View view) {
+		buttonBeep();
 		Intent intent = new Intent(this, ListModules.class);
 		startActivity(intent);
 	}
 
 	public void onClickProfile(View view) {
+		buttonBeep();
 		Intent intent = new Intent(this, Profile.class);
 		intent.putExtra("name", name);
 		intent.putExtra("username", username);
@@ -118,11 +131,13 @@ public class MainActivity extends Activity {
 	}
 
 	public void onClickHighscores(View view) {
+		buttonBeep();
 		Intent intent = new Intent(this, HighscoresActivity.class);
 		startActivity(intent);
 	}
 
 	public void onClickQuiz(View view) {
+		buttonBeep();
 		// Intent intent=new Intent(this, ListAnimals.class);
 		Intent intent = new Intent(this, ListModulesQuiz.class);
 		startActivity(intent);
@@ -131,17 +146,20 @@ public class MainActivity extends Activity {
 	// Go staiv tuka privremeno dur ne se odlucime kaj kje bide searchot na
 	// zivotni
 	public void onClickSearch(View view) {
+		buttonBeep();
 		Intent intent = new Intent(this, ListAnimals.class);
 		startActivity(intent);
 	}
 
 	public void onClickAbout(View view) {
+		buttonBeep();
 		Intent intent = new Intent(this, About.class);
 		startActivity(intent);
 	}
 
 	// event za klik na Learn more.. kaj Animal of the day
 	public void onClickLearnMore(View view) {
+		buttonBeep();
 		Intent i = new Intent(MainActivity.this, AnimalDetails.class);
 		i.putExtra("url", URL_BASE + animalOfTheDayLink);
 		i.putExtra("animals",
@@ -267,4 +285,6 @@ public class MainActivity extends Activity {
 		}
 
 	}
+	
+	
 }

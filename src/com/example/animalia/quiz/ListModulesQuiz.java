@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +47,11 @@ public class ListModulesQuiz extends Activity {
 		modulesList = new ArrayList<HashMap<String, String>>();
 		parseJson();
 	}
+	public void buttonBeep()
+	{
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+		mp.start();	
+	}	
 
 	private void parseJson() {
 		String jsonStr = null;
@@ -142,6 +148,7 @@ public class ListModulesQuiz extends Activity {
 	}
 
 	public void imageClicked(View view) {
+		buttonBeep();
 		Intent i;
 		switch (view.getId()) {
 		case R.id.img0:
@@ -173,6 +180,7 @@ public class ListModulesQuiz extends Activity {
 	}
 	
 	public void allClicked(View view){
+		buttonBeep();
 		Intent intent=new Intent(this, QuestionActivity.class);
 		intent.putExtra("module", "Expert");
 		startActivity(intent);	

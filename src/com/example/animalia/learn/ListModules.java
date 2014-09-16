@@ -17,6 +17,7 @@ import com.example.animalia.http_request.GetResponse;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,12 @@ public class ListModules extends Activity {
 		parseJson();
 	}
 
+	public void buttonBeep()
+	{
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+		mp.start();	
+	}	
+	
 	private void parseJson() {
 		String jsonStr = null;
 		try {
@@ -142,6 +149,7 @@ public class ListModules extends Activity {
 	}
 
 	public void imageClicked(View view) {
+		buttonBeep();
 		Intent i;
 		switch (view.getId()) {
 		case R.id.img0:
@@ -173,6 +181,7 @@ public class ListModules extends Activity {
 	}
 	
 	public void allClicked(View view){
+		buttonBeep();
 		Intent intent=new Intent(this, ListAnimals.class);
 		intent.putExtra("url", ListAnimals.URL_ANIMALS);
 		startActivity(intent);

@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -56,6 +57,12 @@ public class DisplayScoreActivity extends Activity {
 		parseJson();
 	}
 
+	public void buttonBeep()
+	{
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
+		mp.start();	
+	}	
+	
 	private void parseJson() {
 		String jsonStr = null;
 		try {
@@ -104,6 +111,7 @@ public class DisplayScoreActivity extends Activity {
 	}
 
 	public void goToMainMenu(View view) {
+		buttonBeep();
 		SharedPreferences sharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);
 		String username = sharedPreferences.getString("USER_NAME", "none");
@@ -121,6 +129,7 @@ public class DisplayScoreActivity extends Activity {
 	}
 
 	public void onClickHighscores(View view) {
+		buttonBeep();
 		Intent intent = new Intent(this, HighscoresActivity.class);
 		startActivity(intent);
 	}
