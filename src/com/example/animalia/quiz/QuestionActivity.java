@@ -76,9 +76,7 @@ public class QuestionActivity extends Activity {
 		option4 = (Button) findViewById(R.id.option4);
 
 		setTitle(module);
-		fillData();
-		countDownTimer = new MyCountDownTimer(startTime, interval);
-		countDownTimer.start();
+		fillData();		
 		intent = new Intent(this, DisplayScoreActivity.class);
 	}
 
@@ -202,6 +200,8 @@ public class QuestionActivity extends Activity {
 					intent.putExtra("type", module);
 					intent.putExtra("timeleft", textViewTime.getText());
 					finish();
+					MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.clapping);
+					mp.start();
 					startActivity(intent);
 				}
 			}
@@ -212,6 +212,8 @@ public class QuestionActivity extends Activity {
 	public class MyCountDownTimer extends CountDownTimer {
 		public MyCountDownTimer(long startTime, long interval) {
 			super(startTime, interval);
+			MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.clock);
+			mp.start();
 		}
 
 		@Override
@@ -219,6 +221,8 @@ public class QuestionActivity extends Activity {
 			Intent intent = new Intent(QuestionActivity.this,
 					TimeoutActivity.class);
 			intent.putExtra("module", module);
+			MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.aww);
+			mp.start();
 			finish();
 			startActivity(intent);
 		}

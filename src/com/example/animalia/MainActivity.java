@@ -60,10 +60,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_layout);
-		
-		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.jungle);
-		mp.start();
+		setContentView(R.layout.main_layout);	
 		
 		try {
 			parseJson();
@@ -73,6 +70,8 @@ public class MainActivity extends Activity {
 
 		initializeAllShit();
 		checkLoginStatus();
+//		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.jungle);
+//		mp.start();
 	}
 	
 	public void buttonBeep()
