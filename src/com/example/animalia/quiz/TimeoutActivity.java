@@ -19,11 +19,11 @@ public class TimeoutActivity extends Activity {
 	public static final String POINTS = "points";
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {		
-		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.aww);
-		mp.start();
+	protected void onCreate(Bundle savedInstanceState) {	
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.timeout_layout);
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.aww);
+		mp.start();
 	}
 	
 	public void openNewQuiz(View view) {

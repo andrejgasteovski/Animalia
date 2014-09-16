@@ -40,8 +40,7 @@ public class DisplayScoreActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.clapping);
-		mp.start();
+		
 		setContentView(R.layout.display_score_layout);
 		Intent intent = getIntent();
 		//
@@ -57,6 +56,8 @@ public class DisplayScoreActivity extends Activity {
 
 		textViewScore = (TextView) findViewById(R.id.textViewScore);
 		parseJson();
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.clapping);
+		mp.start();
 	}
 
 	public void buttonBeep()
