@@ -40,6 +40,8 @@ public class DisplayScoreActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.clapping);
+		mp.start();
 		setContentView(R.layout.display_score_layout);
 		Intent intent = getIntent();
 		//
@@ -62,6 +64,8 @@ public class DisplayScoreActivity extends Activity {
 		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
 		mp.start();	
 	}	
+	
+
 	
 	private void parseJson() {
 		String jsonStr = null;
@@ -103,7 +107,7 @@ public class DisplayScoreActivity extends Activity {
 					R.drawable.star_yellow));
 			if (stars == 3)
 			{
-				ImageView star3 = (ImageView) findViewById(R.id.imageViewStar2);
+				ImageView star3 = (ImageView) findViewById(R.id.imageViewStar3);
 				star3.setImageDrawable(getResources().getDrawable(
 						R.drawable.star_yellow));
 			}
@@ -132,6 +136,17 @@ public class DisplayScoreActivity extends Activity {
 		buttonBeep();
 		Intent intent = new Intent(this, HighscoresActivity.class);
 		startActivity(intent);
+	}
+	
+	public void openNewQuiz(View view) {
+		buttonBeep();
+		finish();
+		Intent current = getIntent();
+		String module = current.getStringExtra("type");
+		Intent intent = new Intent(DisplayScoreActivity.this, QuestionActivity.class);	
+		intent.putExtra("module", module);
+		startActivity(intent);
+		
 	}
 
 }

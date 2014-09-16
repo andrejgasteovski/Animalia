@@ -110,7 +110,6 @@ public class StartActivity extends Activity{
 	
 	private void startMainActivity(){
 		Intent intent = new Intent(this.getApplicationContext(), MainActivity.class);
-		beep();
 		intent.putExtra(USERNAME, username);
 		intent.putExtra(NAME, name);
 		intent.putExtra(POINTS, points);
@@ -140,10 +139,5 @@ public class StartActivity extends Activity{
 			Log.e("animalia", "Couldn't get any data from the url");
 		}
 	}
-	
-	public void beep()
-	{
-		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.button);
-		mp.start();	
-	}	
+		
 }

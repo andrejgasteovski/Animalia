@@ -72,9 +72,20 @@
             android:background="@drawable/blue_button"
             android:onClick="onClickHighscores"
             android:text="Highscores"
-            android:textColor="#fff" />
-
+            android:textColor="#fff"
+            android:textStyle="bold"  />
+        
         <Button
+            android:id="@+id/btnScoreTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/blue_button"
+            android:onClick="openNewQuiz"
+            android:text="Try again"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+<Button
             android:id="@+id/btnScoreMainMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,7 +93,8 @@
             android:background="@drawable/blue_button"
             android:onClick="goToMainMenu"
             android:text="Go to main menu"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textStyle="bold"  />
     </LinearLayout>
 
 </LinearLayout>

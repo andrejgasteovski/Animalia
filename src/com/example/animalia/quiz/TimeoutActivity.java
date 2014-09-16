@@ -19,8 +19,9 @@ public class TimeoutActivity extends Activity {
 	public static final String POINTS = "points";
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		buttonBeep();
+	protected void onCreate(Bundle savedInstanceState) {		
+		MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.aww);
+		mp.start();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.timeout_layout);
 	}
