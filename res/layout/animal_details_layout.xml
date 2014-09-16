@@ -3,8 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/frame"
+    android:background="@drawable/bg_light"
     android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Python"
+            android:textColor="#000"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewNameFront"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="8dp"
+            android:text="Python"
+            android:textColor="#0000ff"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -21,156 +49,29 @@
             tools:ignore="MergeRootFrame" >
 
             <ImageView
-                android:id="@+id/imageViewAnimalDetails"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/learnabout" />
-
-            <TextView
-                android:id="@+id/textViewName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:text="Python" />
-
-            <ImageView
                 android:id="@+id/imageViewAnimalPhoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="Photo"
                 android:src="@drawable/allkinds" />
-            <!-- AREA -->
-
-            <LinearLayout
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:padding="5dp" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Area:"
-                    android:textColor="#006633"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewArea"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp" />
-            </LinearLayout>
-            <!-- END AREA -->
-            <!-- HABITAT -->
-
-            <LinearLayout
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Habitat:"
-                    android:textColor="#006633"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewHabitat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp" />
-            </LinearLayout>
-            <!-- END HABITAT -->
-            <!-- FOOD -->
-
-            <LinearLayout
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Food:"
-                    android:textColor="#006633"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewFood"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp" />
-            </LinearLayout>
-            <!-- END FOOD -->
-            <!-- SIZE -->
-
-            <LinearLayout
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Size:"
-                    android:textColor="#006633"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewSize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp" />
-            </LinearLayout>
-            <!-- END SIZE -->
-            <!-- BABIES -->
-
-            <LinearLayout
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Babies:"
-                    android:textColor="#006633"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewBabies"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp" />
-            </LinearLayout>
-            <!-- END BABIES -->
+            
             <!-- FACT -->
 
             <LinearLayout
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textbox_blue"
+                android:orientation="vertical"
                 android:padding="5dp" >
 
                 <TextView
+                    android:id="@+id/title_textViewFact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fact:"
-                    android:textColor="#006633"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Fun fact:"
+                    android:textColor="#000099"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -178,18 +79,181 @@
                     android:id="@+id/textViewFact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:paddingBottom="10dp" />
             </LinearLayout>
             <!-- END FACT -->
+            
+            <!-- AREA -->
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textbox_green"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/title_textViewArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Area:"
+                    android:textColor="#000099"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="10dp" />
+            </LinearLayout>
+            <!-- END AREA -->
+            <!-- HABITAT -->
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textbox_green"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/title_textViewHabitat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Habitat:"
+                    android:textColor="#000099"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewHabitat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="10dp" />
+            </LinearLayout>
+            <!-- END HABITAT -->
+            <!-- FOOD -->
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textbox_green"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/title_textViewFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Food:"
+                    android:textColor="#000099"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="10dp" />
+            </LinearLayout>
+            <!-- END FOOD -->
+            <!-- SIZE -->
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textbox_green"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/title_textViewSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Size:"
+                    android:textColor="#000099"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="10dp" />
+            </LinearLayout>
+            <!-- END SIZE -->
+            <!-- BABIES -->
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/textbox_green"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/title_textViewBabies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Babies:"
+                    android:textColor="#000099"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewBabies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="10dp" />
+            </LinearLayout>
+            <!-- END BABIES -->
+            
             <!-- TEXT -->
 
-            <TextView
-                android:id="@+id/textViewText"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textbox_green"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/title_textViewMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Something more:"
+                    android:textColor="#000099"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewText"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" 
+                    android:paddingBottom="60dp"/>
+            </LinearLayout>
 
             <!-- END TEXT -->
-
         </LinearLayout>
     </ScrollView>
     <!-- NAVIGATION BUTTONS -->
@@ -206,7 +270,7 @@
             <Button
                 android:id="@+id/buttonPreviousAnimal"
                 android:layout_width="fill_parent"
-                android:layout_height="65dp"
+                android:layout_height="50dp"
                 android:background="@drawable/green_button"
                 android:onClick="buttonOnClick"
                 android:text="Previous animal"
@@ -216,16 +280,16 @@
             <Button
                 android:id="@+id/buttonBackToModule"
                 android:layout_width="fill_parent"
-                android:layout_height="65dp"
+                android:layout_height="50dp"
                 android:background="@drawable/green_button"
                 android:onClick="backButtonOnClick"
-                android:text="Back to module"
+                android:text="List animals"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/buttonNextAnimal"
-                android:layout_width="120dp"
+                android:layout_width="140dp"
                 android:layout_height="fill_parent"
                 android:background="@drawable/green_button"
                 android:onClick="buttonOnClick"
