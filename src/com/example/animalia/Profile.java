@@ -98,8 +98,11 @@ public class Profile extends Activity {
 
 	}
 	private void setContent(){
+		replaceNone();
+		
 		TextView txtName = (TextView) findViewById(R.id.name);
 		TextView txtHighscore = (TextView) findViewById(R.id.highscore);
+		
 		
 		TextView txtRanking1 = (TextView) findViewById(R.id.ranking1);
 		TextView txtRanking2 = (TextView) findViewById(R.id.ranking2);
@@ -112,6 +115,7 @@ public class Profile extends Activity {
 		txtName.setText(name);
 		txtHighscore.setText(highscore);
 		
+		
 		txtRanking1.setText(module1);
 		txtRanking2.setText(module2);
 		txtRanking3.setText(module3);
@@ -119,5 +123,18 @@ public class Profile extends Activity {
 		txtRanking5.setText(module5);
 		txtRanking6.setText(module6);
 		txtRanking7.setText(module7);
+	}
+	//replaces all None with 0
+	private void replaceNone(){
+		if(name.equals("none none"))name="Unknown";
+		if(highscore.equals("none"))highscore="0";
+		
+		if(module1.equals("none"))module1="0";
+		if(module2.equals("none"))module2="0";
+		if(module3.equals("none"))module3="0";
+		if(module4.equals("none"))module4="0";
+		if(module5.equals("none"))module5="0";
+		if(module6.equals("none"))module6="0";
+		if(module7.equals("none"))module7="0";
 	}
 }
