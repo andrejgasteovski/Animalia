@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,10 +41,10 @@ public class MainActivity extends Activity {
 	public static String URL_BASE = "http://hcibiology.herokuapp.com";
 
 	// JSON Node names
-	private static final String TAG_ID = "id";
-	private static final String TAG_NAME = "name";
-	private static final String TAG_LINK = "link";
-	private static final String TAG_PHOTO = "photo";
+	public static final String TAG_ID = "id";
+	public static final String TAG_NAME = "name";
+	public static final String TAG_LINK = "link";
+	public static final String TAG_PHOTO = "photo";
 
 	private JSONObject animalOfTheDay;
 	private String animalOfTheDayLink;
@@ -55,8 +56,11 @@ public class MainActivity extends Activity {
 
 	Button btnLogin;
 	TextView tvLoginStatus;
-	TextView tvAnimalName;
+	TextView tvAotd;
+	TextView tvAotdFront;
+	Button btnAnimalName;
 
+	ImageView imgMonkey;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -91,10 +95,21 @@ public class MainActivity extends Activity {
 		btnLogin = (Button) findViewById(R.id.buttonLogin);
 
 		tvLoginStatus = (TextView) findViewById(R.id.textViewLoginStatus);
+		tvAotd=(TextView)findViewById(R.id.tvAotd);
+		tvAotdFront=(TextView)findViewById(R.id.tvAotdFront);
+		
+		imgMonkey=(ImageView)findViewById(R.id.imgMonkey);
+		imgMonkey.bringToFront();
 		Log.d("animalia", "All the shit is initialized.. Values --- Username: "
 				+ username + " -- Name: + " + name + " -- Points: " + points);
+		setFont();
 	}
-
+	private void setFont(){
+		Typeface tf = Typeface
+				.createFromAsset(getAssets(), "fonts/cookies.ttf");
+		tvAotd.setTypeface(tf);
+		tvAotdFront.setTypeface(tf);
+	}
 	private void checkLoginStatus() {
 		Log.d("animalia", "checkLoginStatus is called");
 
@@ -271,8 +286,8 @@ public class MainActivity extends Activity {
 
 				ImageView imageView = (ImageView) findViewById(R.id.image);
 				new ImageLoadTask(photo, imageView).execute(null, null);
-				tvAnimalName = (TextView) findViewById(R.id.imageText);
-				tvAnimalName.setText(name);
+				btnAnimalName = (Button) findViewById(R.id.imageText);
+				btnAnimalName.setText(name);
 				// used in onClickLearnMore method
 				animalOfTheDayLink = link;
 				

@@ -2,48 +2,84 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainmenu"
+    android:background="@drawable/bg_light"
     android:orientation="vertical" >
 
     <!-- TOP PART OF THE LAYOUT -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imgMonkey"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="monkey"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/pointing_monkey" />
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="240dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
         android:background="@drawable/aotd_layout"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp" >
+        android:padding="10dp" >
 
-        <TextView
-            android:id="@+id/imageText"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content" 
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textColor="#53933f"/>
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/tvAotd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Animal of the day"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAotdFront"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Animal of the day"
+                android:textColor="#0000ff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="220dp"
-            android:src="@drawable/allkinds"
-            android:layout_height="150dp"
-            
-            android:contentDescription="Animal of the day" >
+            android:layout_width="210dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="-4dp"
+            android:contentDescription="Animal of the day"
+            android:src="@drawable/allkinds" >
         </ImageView>
 
         <Button
-            android:id="@+id/buttonLearnMore"
-            android:layout_width="220dp"
+            android:id="@+id/imageText"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:background="@drawable/green_button"
             android:onClick="onClickLearnMore"
             android:text="Learn more..."
             android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:paddingBottom="5dp" />
     </LinearLayout>
     <!-- END OD TOP PART OF THE LAYOUT -->
     <!-- BOTTOM PART OF THE LAYOUT -->
@@ -70,9 +106,9 @@
                 android:layout_height="105dp"
                 android:contentDescription="Learn about animals"
                 android:onClick="onClickLearn"
-                android:src="@drawable/btn_learn"
+                android:paddingBottom="5dp"
                 android:paddingRight="5dp"
-                android:paddingBottom="5dp" />
+                android:src="@drawable/btn_learn" />
 
             <ImageView
                 android:id="@+id/btnQuiz"
@@ -80,8 +116,8 @@
                 android:layout_height="105dp"
                 android:contentDescription="Take a quiz"
                 android:onClick="onClickQuiz"
-                android:src="@drawable/btn_test"
-                android:paddingBottom="5dp"  />
+                android:paddingBottom="5dp"
+                android:src="@drawable/btn_test" />
         </LinearLayout>
         <!-- END OF FIRST ROW -->
         <!-- SECOND ROW OF BUTTONS -->
@@ -99,8 +135,8 @@
                 android:layout_height="70dp"
                 android:contentDescription="Settings"
                 android:onClick="onClickProfile"
-                android:src="@drawable/btn_profile" 
-                android:paddingRight="5dp"/>
+                android:paddingRight="5dp"
+                android:src="@drawable/btn_profile" />
 
             <ImageView
                 android:id="@+id/btnHighScores"
@@ -108,10 +144,8 @@
                 android:layout_height="70dp"
                 android:contentDescription="See high scores"
                 android:onClick="onClickHighscores"
-                android:src="@drawable/btn_highscores"
-                android:paddingRight="5dp" />
-
-           
+                android:paddingRight="5dp"
+                android:src="@drawable/btn_highscores" />
 
             <ImageView
                 android:id="@+id/btnAbout"
@@ -127,8 +161,8 @@
             android:id="@+id/textViewLoginStatus"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="Welcome!"
             android:textColor="#3B5998"
             android:textSize="20sp"
