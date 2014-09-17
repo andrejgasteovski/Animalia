@@ -51,7 +51,7 @@
                 android:gravity="center"
                 android:orientation="vertical" >
 
-                <TextView
+                <Button
                     android:id="@+id/spot_name"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
@@ -62,7 +62,8 @@
                     android:text="Blue poison frog"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" 
+                    android:onClick="onClickSpotlightAnimalName"/>
 
                 <ImageView
                     android:id="@+id/spot_photo"

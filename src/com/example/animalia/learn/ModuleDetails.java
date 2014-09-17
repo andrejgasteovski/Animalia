@@ -8,16 +8,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.animalia.AnimalShort;
@@ -53,6 +50,8 @@ public class ModuleDetails extends Activity {
 
 	// Hashmap for ListView
 	ArrayList<AnimalShort> animalsList;
+	
+	private String spotlightLink;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -162,14 +161,14 @@ public class ModuleDetails extends Activity {
 		String name = spotlight.getString(TAG_NAME);
 		String photo = spotlight.getString(TAG_PHOTO_SPOT);
 		String fact = spotlight.getString(TAG_FACT_SPOT);
-		String link = spotlight.getString(TAG_LINK);
+		spotlightLink = spotlight.getString(TAG_LINK);
 		// get the elements from layout
-		TextView tvName = (TextView) findViewById(R.id.spot_name);
+		Button btnName = (Button) findViewById(R.id.spot_name);
 		TextView tvFact = (TextView) findViewById(R.id.spot_fact);
 		ImageView imageView = (ImageView) findViewById(R.id.spot_photo);
 
 		// set data
-		tvName.setText(name);
+		btnName.setText(name);
 		tvFact.setText(fact);
 		new ImageLoadTask(photo, imageView).execute(null, null);
 
@@ -202,6 +201,14 @@ public class ModuleDetails extends Activity {
 	public void onClickSpotlightAnimal(View view) 
 	{
 		buttonBeep();
+	}
+	
+	public void onClickSpotlightAnimalName(View view){
+		Intent i = new Intent(ModuleDetails.this, AnimalDetails.class);
+		i.putExtra("url", MainActivity.URL_BASE + spotlightLink);
+		i.putExtra("animals",
+				ListAnimals.getAnimalsList(urlModule + "/animals"));
+		startActivity(i);
 	}
 
 }
