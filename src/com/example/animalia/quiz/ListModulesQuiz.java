@@ -117,32 +117,32 @@ public class ListModulesQuiz extends Activity {
 		tvAll.setText("Expert");
 		
 		HashMap<String, String> module0 = modulesList.get(0);
-		ImageView imgView0 = (ImageView) findViewById(R.id.img0);
-		new ImageLoadTask(module0.get(TAG_ICON), imgView0).execute(null, null);
+		//ImageView imgView0 = (ImageView) findViewById(R.id.img0);
+		//new ImageLoadTask(module0.get(TAG_ICON), imgView0).execute(null, null);
 		TextView tv0 = (TextView) findViewById(R.id.module0);
 		tv0.setText(module0.get(TAG_MODULE));
 
 		HashMap<String, String> module1 = modulesList.get(1);
-		ImageView imgView1 = (ImageView) findViewById(R.id.img1);
-		new ImageLoadTask(module1.get(TAG_ICON), imgView1).execute(null, null);
+		//ImageView imgView1 = (ImageView) findViewById(R.id.img1);
+		//new ImageLoadTask(module1.get(TAG_ICON), imgView1).execute(null, null);
 		TextView tv1 = (TextView) findViewById(R.id.module1);
 		tv1.setText(module1.get(TAG_MODULE));
 
 		HashMap<String, String> module2 = modulesList.get(2);
-		ImageView imgView2 = (ImageView) findViewById(R.id.img2);
-		new ImageLoadTask(module2.get(TAG_ICON), imgView2).execute(null, null);
+		//ImageView imgView2 = (ImageView) findViewById(R.id.img2);
+		//new ImageLoadTask(module2.get(TAG_ICON), imgView2).execute(null, null);
 		TextView tv2 = (TextView) findViewById(R.id.module2);
 		tv2.setText(module2.get(TAG_MODULE));
 
 		HashMap<String, String> module3 = modulesList.get(3);
-		ImageView imgView3 = (ImageView) findViewById(R.id.img3);
-		new ImageLoadTask(module3.get(TAG_ICON), imgView3).execute(null, null);
+		//ImageView imgView3 = (ImageView) findViewById(R.id.img3);
+		//new ImageLoadTask(module3.get(TAG_ICON), imgView3).execute(null, null);
 		TextView tv3 = (TextView) findViewById(R.id.module3);
 		tv3.setText(module3.get(TAG_MODULE));
 
 		HashMap<String, String> module4 = modulesList.get(4);
-		ImageView imgView4 = (ImageView) findViewById(R.id.img4);
-		new ImageLoadTask(module4.get(TAG_ICON), imgView4).execute(null, null);
+		//ImageView imgView4 = (ImageView) findViewById(R.id.img4);
+		//new ImageLoadTask(module4.get(TAG_ICON), imgView4).execute(null, null);
 		TextView tv4 = (TextView) findViewById(R.id.module4);
 		tv4.setText(module4.get(TAG_MODULE));
 	}

@@ -72,7 +72,8 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:contentDescription="Arthropods"
-                    android:onClick="imageClicked" >
+                    android:onClick="imageClicked"
+                    android:src="@drawable/icon_arthropods" >
                 </ImageView>
                 <!-- Module Label -->
 
@@ -110,7 +111,8 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:contentDescription="Amphibians"
-                    android:onClick="imageClicked" >
+                    android:onClick="imageClicked"
+                    android:src="@drawable/icon_amphibians">
                 </ImageView>
                 <!-- Module Label -->
 
@@ -145,7 +147,9 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:contentDescription="Reptiles"
-                    android:onClick="imageClicked" >
+                    android:onClick="imageClicked"
+                    android:src="@drawable/icon_reptiles">
+                  
                 </ImageView>
                 <!-- Module Label -->
 
@@ -182,7 +186,8 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:contentDescription="Birds"
-                    android:onClick="imageClicked" >
+                    android:onClick="imageClicked"
+                    android:src="@drawable/icon_birds">
                 </ImageView>
                 <!-- Module Label -->
 
@@ -217,7 +222,9 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:contentDescription="Mammals"
-                    android:onClick="imageClicked" >
+                    android:onClick="imageClicked"
+                    android:src="@drawable/icon_mammals">
+                    
                 </ImageView>
                 <!-- Module Label -->
 
