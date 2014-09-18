@@ -5,11 +5,11 @@
     android:background="@drawable/bg_s"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/text2"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Arthropods" />
+        android:layout_height="40dp"
+        android:src="@drawable/arthropods" />
 
     <ListView
         android:id="@+id/listViewHigscoresArthropods"

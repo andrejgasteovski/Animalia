@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
             android:layout_marginRight="55dp"
-            android:background="@drawable/textbox_green"
+            android:background="@drawable/aotd_layout"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -53,11 +53,11 @@
 
                 <Button
                     android:id="@+id/spot_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/blue_button"
+                    android:background="@drawable/green_button"
                     android:gravity="center"
                     android:text="Blue poison frog"
                     android:textColor="#FFFFFF"

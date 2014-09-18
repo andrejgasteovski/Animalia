@@ -6,11 +6,12 @@
     android:background="@drawable/bg_s"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/text1"
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total" />
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:src="@drawable/total" />
 
     <ListView
         android:id="@+id/listViewHigscoresTotal"

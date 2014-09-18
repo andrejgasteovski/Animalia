@@ -1,96 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_light"
+    android:background="@drawable/mainmenu"
     android:orientation="vertical" >
 
     <!-- TOP PART OF THE LAYOUT -->
 
-    <ImageView
-        android:id="@+id/imgMonkey"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="monkey"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/pointing_monkey" />
-
-    <LinearLayout
-        android:layout_width="280dp"
-        android:layout_height="240dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/aotd_layout"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp" >
-
-        <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center" >
-
-            <TextView
-                android:id="@+id/tvAotd"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="Animal of the day"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvAotdFront"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="7dp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="Animal of the day"
-                android:textColor="#0000ff"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-        </FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal" >
 
         <ImageView
-            android:id="@+id/image"
-            android:layout_width="210dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="-4dp"
-            android:contentDescription="Animal of the day"
-            android:src="@drawable/allkinds" >
-        </ImageView>
+            android:id="@+id/imgMonkey"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="monkey"
+            android:src="@drawable/monkey" />
 
-        <Button
-            android:id="@+id/imageText"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/green_button"
-            android:onClick="onClickLearnMore"
-            android:text="Learn more..."
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginTop="2dp"
-            android:paddingBottom="5dp" />
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="240dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/aotd_layout"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/tvAotd"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Animal of the day"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAotdFront"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Animal of the day"
+                    android:textColor="#0000ff"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="-4dp"
+                android:contentDescription="Animal of the day"
+                android:src="@drawable/allkinds" />
+
+            <Button
+                android:id="@+id/imageText"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/green_button"
+                android:onClick="onClickLearnMore"
+                android:paddingBottom="5dp"
+                android:text="Learn more..."
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
     <!-- END OD TOP PART OF THE LAYOUT -->
     <!-- BOTTOM PART OF THE LAYOUT -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical" 
+        android:layout_marginTop="15dp">
 
         <!-- FIRST ROW OF BUTTONS -->
 
@@ -149,8 +152,8 @@
 
             <ImageView
                 android:id="@+id/btnAbout"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:onClick="onClickAbout"
                 android:src="@drawable/btn_about" />
         </LinearLayout>
@@ -162,18 +165,18 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Welcome!"
             android:textColor="#3B5998"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" >
         </TextView>
 
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="220dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="15dp"
+            android:layout_height="50dp"
             android:background="@drawable/fb_button"
             android:onClick="loginFacebook"
             android:textColor="#FFFFFF"
@@ -184,4 +187,4 @@
     </LinearLayout>
     <!-- END OF BOTTOM PART OF THE LAYOUT -->
 
-</RelativeLayout>
+</LinearLayout>
