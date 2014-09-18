@@ -16,7 +16,11 @@
     <string name="title_activity_question">Question Activity</string>
     <string name="title_activity_timeout">Timeout Activity</string>
     <string name="title_activity_about">About</string>
-    <string name="about">Lorem ipsum dolor sit amet, essent minimum perpetua pro ad, ne mel augue rationibus philosophia. Cu sed omnis viderer deserunt, cu commodo blandit mea. Facilisi intellegat ad mea, ullum quando consulatu cum eu, affert dolores eleifend cum ei. Eam ex amet unum offendit. Vim nulla tempor id. Mei laoreet pericula eu.
-Ei phaedrum similique deseruisse mei, ei ullum voluptatibus eum. Ex dicta graeci iracundia sit.</string>
+    <string name="about">Animalia is a playful app, in which we aimed to create a fun and joyful learning environment for kids. In a matter of seconds, the kid can easily navigate through the app, learn about its favorite animals, and test its knowledge about them. It can also compete with other kids and share the love for animals through the Animalia app!
+Designed and programmed by
+Ivana Bozhinova
+Sandra Delovska
+Andrej Gashteovski
+Blagoja Evkoski</string>
 
 </resources>
